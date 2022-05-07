@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import logo from './logo.svg'
+
+import NavBar from "./componentes/NavBar"
+
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
@@ -9,15 +12,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
+      <NavBar/>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
         <p>
           <a
             className="App-link"
