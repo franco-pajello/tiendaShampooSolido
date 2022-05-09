@@ -1,7 +1,7 @@
-const ButtonSaludo = ({parametro=hola}) => {
+const ButtonSaludo = ({ parametro = hola }) => {
   return (
     <div>
- <button onClick={parametro}>click</button>
+      <button onClick={parametro}>click</button>
     </div>
   )
 }

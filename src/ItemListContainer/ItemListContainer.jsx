@@ -1,14 +1,16 @@
 import ButtonSaludo from "../ButtonContenedor/buttonSaludo"
 
 
-const ItemListContainer = ({greeTing="saludo"}) => {
- function saludoAlert(){
-alert(greeTing)
- }
- 
-    return (
-<>
-<ButtonSaludo parametro = {saludoAlert}/>
+const ItemListContainer = ({ greeTing = "saludo" }) => {
+  function saludoAlert() {
+    alert(greeTing)
+  }
+
+  return (
+    <>
+      {greeTing}
+
+      <ButtonSaludo parametro={saludoAlert} />
     </>
   )
 }

@@ -11,10 +11,11 @@ function App() {
 
   return (
     <div className="App">
-      
 
-      <NavBar/>
- <ItemListContainer saludo={"hola"}/>
+
+      <NavBar />
+
+      <ItemListContainer greeTing={"hola"} />
     </div>
   )
 }
