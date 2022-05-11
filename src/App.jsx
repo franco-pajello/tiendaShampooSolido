@@ -6,8 +6,10 @@ import NavBar from "./componentes/NavBar"
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './ItemListContainer/ItemListContainer';
+import ItemCount from './itemCount/ItemCount';
+
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <div className="App">
@@ -16,6 +18,11 @@ function App() {
       <NavBar />
 
       <ItemListContainer greeTing={"hola"} />
+
+      <>
+ 
+   <ItemCount/>
+      </>
     </div>
   )
 }
