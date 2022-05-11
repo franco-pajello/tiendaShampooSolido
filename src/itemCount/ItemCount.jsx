@@ -30,21 +30,21 @@ const ItemCount = () => {
       cantidadTotal(count + 1)
       stockDisponible(stockTotal - 1)
     } else {
-      alert("el limite es 5")
+      alert("El limite es 5")
     }
 
   }
   function cantidadComprar() {
     if (count === 0) {
-      alert("tiene que elegir una cantidad")
+      alert("Tiene que elegir una cantidad")
 
     }
     if (count === 1) {
-      alert("compro " + count + " unidad")
+      alert("Compró " + count + " unidad")
 
     }
     if (count > 1) {
-      alert("compro " + count + " unidades")
+      alert("Compró " + count + " unidades")
     }
   }
 
@@ -61,7 +61,7 @@ const ItemCount = () => {
         <Button variant="info" size="lg" active className="w-50" onClick={restarCantidad}  >
           -
         </Button>
-        <Button variant="success" className="w-100" onClick={cantidadComprar}>comprar</Button>
+        <Button variant="success" className="w-100" onClick={cantidadComprar}>Comprar</Button>
 
         <StockDisponible totalStock={stockTotal} />
       </div>

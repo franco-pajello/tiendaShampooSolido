@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card"
 
-const StockDisponible = ({ totalStock = "no hay stock" }) => {
+const StockDisponible = ({ totalStock = "No hay stock" }) => {
   return (
     <>
       <Card className="w-100">

@@ -17,7 +17,7 @@ function App() {
 
       <NavBar />
 
-      <ItemListContainer greeTing={"hola"} />
+      <ItemListContainer greeTing={"Hola"} />
 
       <>
 

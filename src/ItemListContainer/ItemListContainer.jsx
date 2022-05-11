@@ -1,7 +1,7 @@
 import ButtonSaludo from "../ButtonContenedor/buttonSaludo"
 
 
-const ItemListContainer = ({ greeTing = "saludo" }) => {
+const ItemListContainer = ({ greeTing = "Saludo" }) => {
   function saludoAlert() {
     alert(greeTing)
   }

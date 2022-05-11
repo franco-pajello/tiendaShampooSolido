@@ -1,8 +1,6 @@
 import Card from "react-bootstrap/Card"
-import ItemCount from "./ItemCount"
 
-
-const CantidadIrem = ({ cantidad = "cantidad" }) => {
+const CantidadIrem = ({ cantidad = "Cantidad" }) => {
 
   return (
     <>
