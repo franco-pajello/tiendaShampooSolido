@@ -20,8 +20,8 @@ function App() {
       <ItemListContainer greeTing={"hola"} />
 
       <>
- 
-   <ItemCount/>
+
+        <ItemCount />
       </>
     </div>
   )
