@@ -1,7 +1,9 @@
 import ButtonSaludo from "../ButtonContenedor/buttonSaludo"
+import ItemCount from "../ItemCount/ItemCount"
 
 
 const ItemListContainer = ({ greeTing = "Saludo" }) => {
+  
   function saludoAlert() {
     alert(greeTing)
   }
@@ -9,7 +11,7 @@ const ItemListContainer = ({ greeTing = "Saludo" }) => {
   return (
     <>
       {greeTing}
-
+      <ItemCount stock={5} inicial={0} onAdd/>
       <ButtonSaludo parametro={saludoAlert} />
     </>
   )
