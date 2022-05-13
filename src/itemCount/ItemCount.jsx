@@ -5,7 +5,7 @@ import StockDisponible from "./StockDisponible"
 
 
 
-const ItemCount = ( stock="stok", inicial="inicial", onAdd="onAdd" ) => {
+const ItemCount = ( {stock="stok", inicial="inicial", onAdd="onAdd" } ) => {
  console.log(onAdd)
   const [count, cantidadTotal] = useState(inicial)
   const [stockTotal, stockDisponible] = useState(stock)
