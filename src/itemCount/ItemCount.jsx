@@ -5,51 +5,51 @@ import StockDisponible from "./StockDisponible"
 
 
 
-const ItemCount = ( {stock="stok", inicial="inicial", onAdd="onAdd" } ) => {
- console.log(onAdd)
+const ItemCount = ({ stock = "stok", inicial = "inicial", onAdd = "onAdd" }) => {
+
   const [count, cantidadTotal] = useState(inicial)
   const [stockTotal, stockDisponible] = useState(stock)
-  
+
   function restarCantidad() {
     if (count > inicial) {
-      
-      
+
+
       cantidadTotal(count - 1)
       stockDisponible(stockTotal + 1)
-      
+
     }
-    
-    
+
+
   }
-  
-  
+
+
   function sumarCantidad() {
-    
+
     if (count < stock) {
-      
+
       cantidadTotal(count + 1)
       stockDisponible(stockTotal - 1)
     } else {
       alert("El limite es 5")
     }
-    
+
   }
   function cantidadComprar() {
     if (count === inicial) {
       alert("Tiene que elegir una cantidad")
-      
+
     }
     if (count === 1) {
       alert("Compró " + count + " unidad")
-      
+
     }
     if (count > 1) {
       alert("Compró " + count + " unidades")
     }
   }
   return (
-    
-    
+
+
     <div className="w-100 ">
 
       <CantidadIrem cantidad={count} />

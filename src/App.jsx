@@ -16,10 +16,10 @@ function App() {
 
       <NavBar />
 
-    
-      <ItemListContainer />
 
-        
+      <ItemListContainer greeTing='hola' />
+
+
 
     </div>
   )
