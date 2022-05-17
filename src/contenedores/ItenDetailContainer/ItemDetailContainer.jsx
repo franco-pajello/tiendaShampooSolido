@@ -1,17 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../../conponentesIndividuales/ItemDetail"
-import ItemCount from "../itemCount/ItemCount";
-const productos = [
-    { id: "0", nombre: "Shampoo graso", precio: 500, img: "./img/shampoo-graso.jpg", detalle:"detalle detalle detalle"}
-  ]
-  const simuladorApi = new Promise((resolve) => {
-  
-    setTimeout(() => {
-      resolve(productos)
-    }, 2000);
-  
-  })
-  
+import {ApiProductos} from "../../../ApiMock/ApiMockProductos"
+
   
 
 
@@ -19,18 +9,16 @@ const productos = [
 const ItemDetailContainer = () => {
 
     const [Cargando, setCargando] = useState(true)
-    const [productos, setProductos] = useState([])
-  
+    const [productos, setProductos] = useState({}) 
     useEffect(() => {
-      simuladorApi
+      ApiProductos("1")
         .then(dato => setProductos(dato))
         .catch((err) => console.log(err))
         .finally(() => setCargando(false))
     }, [])
-
-
+console.log(productos)
   return (
-    <ItemDetail productos={productos} Cargando={Cargando} buton={<ItemCount stock={5} inicial={0} onAdd={"onAdd"}/>}/>
+    <ItemDetail productos={productos} Cargando={Cargando} />
   )
 }
 
