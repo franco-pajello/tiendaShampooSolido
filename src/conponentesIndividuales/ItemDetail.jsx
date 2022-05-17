@@ -1,8 +1,10 @@
 import ItemList from './ItemList'
 
-const itemDetail = ({productos , Cargando}) => {
+const itemDetail = ({productos, Cargando, buton}) => {
   return (
-<ItemList productos={productos} Cargando={Cargando}/>
+<ItemList productos={productos} buton={buton}/>
+
+
   )
 }
 

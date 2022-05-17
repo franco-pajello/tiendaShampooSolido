@@ -19,10 +19,9 @@ function App() {
 
       <NavBar />
 
+     <ItemListContainer greeTing='hola' /> 
 
-    {/*   <ItemListContainer greeTing='hola' /> */}
-
-<ItemDetailContainer/>
+    <ItemDetailContainer/>
 
     </div>
   )

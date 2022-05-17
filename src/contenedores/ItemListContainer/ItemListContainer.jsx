@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react"
  import ItemList from "../../conponentesIndividuales/ItemList"; 
-import ButtonSaludo from "../ButtonContenedor/ButtonSaludo";
-import ItemCount from "../itemCount/ItemCount"
-
 const productos = [
   { id: "0", nombre: "Shampoo graso", precio: 500, img: "./img/shampoo-graso.jpg" },
   { id: "1", nombre: "Shampoo normal", precio: 500, img:"./img/shampoo-normal.jpg" },
@@ -42,10 +39,7 @@ const ItemListContainer = ({ greeTing = "Saludo" }) => {
 
   return (
     <>
-      <ItemCount stock={5} inicial={0} onAdd />
       {greeTing}
-
-      <ButtonSaludo parametro={saludoAlert} />
          
       <ItemList productos={productos} Cargando={Cargando}/>
     </>

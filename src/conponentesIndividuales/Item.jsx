@@ -1,11 +1,7 @@
 import ListGroup from "react-bootstrap/ListGroup"
 import ListGroupItem from "react-bootstrap/ListGroupItem"
-import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
-import ItemCount from "../contenedores/itemCount/ItemCount"
-import StockDisponible from "./StockDisponible"
-
-const Item = ({items = "item"}) => {
+const Item = ({items = "item", buton }) => {
 
   return (
     <>
@@ -17,14 +13,14 @@ const Item = ({items = "item"}) => {
         <Card.Body>
           <Card.Title>{items.nombre}</Card.Title>
           <Card.Text>
-             detalle detalle detalle
+             {items.detalle}
           </Card.Text>
           <Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroupItem>${items.precio}</ListGroupItem>
             </ListGroup>
           </Card.Body>
-          <ItemCount stock={5} inicial={0} onAdd />
+          {buton}
         </Card.Body>
       </Card>
 

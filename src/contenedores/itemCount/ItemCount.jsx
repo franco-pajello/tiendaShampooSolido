@@ -37,7 +37,7 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", onAdd = "onAdd" }) => 
   function cantidadComprar() {
     if (count === inicial) {
       alert("Tiene que elegir una cantidad")
-
+    
     }
     if (count === 1) {
       alert("Compró " + count + " unidad")
