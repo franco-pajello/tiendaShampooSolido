@@ -2,8 +2,10 @@ import ListGroup from "react-bootstrap/ListGroup"
 import ListGroupItem from "react-bootstrap/ListGroupItem"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
+import ItemCount from "../contenedores/itemCount/ItemCount"
+import StockDisponible from "./StockDisponible"
 
-const Item = (items = "item") => {
+const Item = ({items = "item"}) => {
 
   return (
     <>
@@ -13,17 +15,16 @@ const Item = (items = "item") => {
       <Card style={{ width: '18rem' }} className="d-flex ">
         <Card.Img variant="top" src={items.img} />
         <Card.Body>
-          <Card.Title>{items.items.nombre}</Card.Title>
+          <Card.Title>{items.nombre}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+             detalle detalle detalle
           </Card.Text>
           <Card.Body>
             <ListGroup className="list-group-flush">
-              <ListGroupItem>${items.items.precio}</ListGroupItem>
+              <ListGroupItem>${items.precio}</ListGroupItem>
             </ListGroup>
           </Card.Body>
-          <Button variant="primary">Detalle</Button>
+          <ItemCount stock={5} inicial={0} onAdd />
         </Card.Body>
       </Card>
 

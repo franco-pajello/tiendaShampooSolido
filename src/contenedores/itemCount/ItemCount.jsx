@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Button from "react-bootstrap/Button"
-import CantidadIrem from "./CantidadIrem"
-import StockDisponible from "./StockDisponible"
+import CantidadIrem from "../../conponentesIndividuales/CantidadIrem"
+import StockDisponible from "../../conponentesIndividuales/StockDisponible"
 
 
 
@@ -53,7 +53,7 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", onAdd = "onAdd" }) => 
     <div className="w-100 ">
 
       <CantidadIrem cantidad={count} />
-      <div className="w-25">
+      <div className="w-100">
         <Button variant="primary" size="lg" active className="w-50" onClick={sumarCantidad} >
           +
         </Button>

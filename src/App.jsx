@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 
-import NavBar from "./componentes/NavBar"
-import ItemListContainer from "./itemListContainer/ItemListContainer"
+
+
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from './contenedores/ItemListContainer/ItemListContainer';
+import NavBar from './contenedores/componentes/NavBar';
+import ItemDetailContainer from './contenedores/ItenDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -17,9 +20,9 @@ function App() {
       <NavBar />
 
 
-      <ItemListContainer greeTing='hola' />
+    {/*   <ItemListContainer greeTing='hola' /> */}
 
-
+<ItemDetailContainer/>
 
     </div>
   )
