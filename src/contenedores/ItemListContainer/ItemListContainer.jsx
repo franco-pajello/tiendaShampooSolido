@@ -1,21 +1,6 @@
 import { useEffect, useState } from "react"
- import ItemList from "../../conponentesIndividuales/ItemList"; 
-const productos = [
-  { id: "0", nombre: "Shampoo graso", precio: 500, img: "./img/shampoo-graso.jpg" },
-  { id: "1", nombre: "Shampoo normal", precio: 500, img:"./img/shampoo-normal.jpg" },
-  { id: "2", nombre: "Shampoo seco", precio: 500, img: "./img/shampoo-seco.jpg" }
-]
-
-const simuladorApi = new Promise((resolve) => {
-
-  setTimeout(() => {
-    resolve(productos)
-  }, 2000);
-
-})
-
-
-
+import { ApiProductos } from "../../../ApiMock/ApiMockProductos";
+import ItemList from "../../conponentesIndividuales/ItemList";
 
 
 const ItemListContainer = ({ greeTing = "Saludo" }) => {
@@ -24,14 +9,11 @@ const ItemListContainer = ({ greeTing = "Saludo" }) => {
   const [productos, setProductos] = useState([])
 
   useEffect(() => {
-    simuladorApi
+    ApiProductos()
       .then(dato => setProductos(dato))
       .catch((err) => console.log(err))
       .finally(() => setCargando(false))
   }, [])
-
-
-
 
   function saludoAlert() {
     alert(greeTing)
@@ -40,10 +22,9 @@ const ItemListContainer = ({ greeTing = "Saludo" }) => {
   return (
     <>
       {greeTing}
-         
-      <ItemList productos={productos} Cargando={Cargando}/>
-    </>
 
+      <ItemList productos={productos} Cargando={Cargando} />
+    </>
 
   )
 }
