@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../../conponentesIndividuales/ItemDetail"
 import { ApiProductos } from "../../../ApiMock/ApiMockProductos"
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-
   const [Cargando, setCargando] = useState(true)
-  const [productos, setProductos] = useState({})
+  const [producto, setProductos] = useState({})
+  const {id} = useParams()
   useEffect(() => {
-    ApiProductos("1")
+    ApiProductos(id)
       .then(dato => setProductos(dato))
       .catch((err) => console.log(err))
       .finally(() => setCargando(false))
-  }, [])
-  console.log(productos)
+  }, [id])
   return (
-    <ItemDetail productos={productos} Cargando={Cargando} />
+    <ItemDetail producto={producto} Cargando={Cargando} />
   )
 }
 

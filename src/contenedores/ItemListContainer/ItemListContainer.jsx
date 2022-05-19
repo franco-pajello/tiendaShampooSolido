@@ -3,10 +3,11 @@ import { ApiProductos } from "../../../ApiMock/ApiMockProductos";
 import ItemList from "../../conponentesIndividuales/ItemList";
 
 
-const ItemListContainer = ({ greeTing = "Saludo" }) => {
+const ItemListContainer = () => {
 
   const [Cargando, setCargando] = useState(true)
   const [productos, setProductos] = useState([])
+  
 
   useEffect(() => {
     ApiProductos()
@@ -15,15 +16,9 @@ const ItemListContainer = ({ greeTing = "Saludo" }) => {
       .finally(() => setCargando(false))
   }, [])
 
-  function saludoAlert() {
-    alert(greeTing)
-  }
-
   return (
     <>
-      {greeTing}
-
-      <ItemList productos={productos} Cargando={Cargando} />
+      <ItemList productos={productos} Cargando={Cargando}/>
     </>
 
   )
