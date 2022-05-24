@@ -6,7 +6,7 @@ import Item from "./Item";
 const ItemList = ({ productos, Cargando }) => {
 
   return (
-    < >
+    <div className="col-12">
       {Cargando ?
         <Button variant="dark" disabled>
           <Spinner
@@ -17,11 +17,11 @@ const ItemList = ({ productos, Cargando }) => {
             aria-hidden="true" />
           Cargando...
         </Button>
-        : productos.map((prod) => <div key={prod.id} className="d-inline-flex align-text-top">
+        : productos.map((prod) => <div key={prod.id} className="d-inline-flex align-text-top col-3">
           <Item items={prod} />
         </div>)}
 
-    </>
+    </div>
   )
 }
 

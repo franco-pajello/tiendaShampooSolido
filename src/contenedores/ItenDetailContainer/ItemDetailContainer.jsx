@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "../../conponentesIndividuales/ItemDetail"
-import { ApiProductos } from "../../../ApiMock/ApiMockProductos"
+import ItemDetail from "../../conponentes/ItemDetail"
+import { ApiProductos } from "../../data/ApiMockProductos"
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {

@@ -8,12 +8,9 @@ const ItemDetail = ({ producto, Cargando }) => {
 
   const [AgregarCarrito, ColocarAgregarCarrito] = useState(true)
 
-  console.log(AgregarCarrito)
-
   function OnAdd() {
     ColocarAgregarCarrito(false)
   }
-
   return (
     <div>
       {Cargando ? <>
@@ -27,8 +24,8 @@ const ItemDetail = ({ producto, Cargando }) => {
           />
           Cargando...
         </Button>
-      </> : <Card style={{ width: '18rem' }} className="d-flex ">
-        <Card.Img variant="top" src={producto.img} />
+      </> : <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={`${producto.img}`} />
         <Card.Body>
           <Card.Title>{`${producto.nombre}`}</Card.Title>
           <Card.Text>
