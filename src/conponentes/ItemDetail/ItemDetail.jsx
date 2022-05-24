@@ -1,7 +1,7 @@
 import Spinner from 'react-bootstrap/Spinner'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-import ItemCount from "../contenedores/itemCount/ItemCount"
+import ItemCount from "../../contenedores/itemCount/ItemCount"
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 const ItemDetail = ({ producto, Cargando }) => {

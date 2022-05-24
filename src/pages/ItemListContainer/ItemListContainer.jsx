@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { ApiProductos } from "../../data/ApiMockProductos";
-import ItemList from "../../conponentes/ItemList";
+import ItemList from "../../conponentes/ItemList/ItemList";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {

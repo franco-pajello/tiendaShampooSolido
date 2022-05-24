@@ -1,7 +1,7 @@
 
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
-import Item from "./Item";
+import Item from "../Item/Item";
 
 const ItemList = ({ productos, Cargando }) => {
 

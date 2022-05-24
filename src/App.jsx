@@ -3,10 +3,10 @@ import logo from './logo.svg'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './contenedores/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './contenedores/ItenDetailContainer/ItemDetailContainer';
-import Carrito from "./contenedores/CarritoContenedor/Carrito"
-import NavBar from './conponentes/NavBar';
+import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './pages/ItenDetailContainer/ItemDetailContainer';
+import Carrito from "./pages/CarritoContenedor/Carrito"
+import NavBar from './pages/NavBar/NavBar';
 
 function App() {
 

@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-import IconCart from "../contenedores/CartWidgetContenedor/CartWidget"
+import IconCart from "../../contenedores/CartWidgetContenedor/CartWidget"
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button";
 const NavBar = () => {
