@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
   const [Cargando, setCargando] = useState(true)
   const [producto, setProductos] = useState({})
-  const {id} = useParams()
+  const { id } = useParams()
   useEffect(() => {
     ApiProductos(id)
       .then(dato => setProductos(dato))

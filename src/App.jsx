@@ -12,7 +12,6 @@ import Carrito from "./contenedores/CarritoContenedor/Carrito"
 
 function App() {
 
-
   return (
     <BrowserRouter>
       <div className="App">
@@ -23,7 +22,7 @@ function App() {
 
         <Routes>
 
-          <Route path="/" element={<ItemListContainer/>} />
+          <Route path="/" element={<ItemListContainer />} />
 
 
           <Route path="/detalle/:id" element={<ItemDetailContainer />} />

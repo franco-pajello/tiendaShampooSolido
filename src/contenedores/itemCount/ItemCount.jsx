@@ -3,9 +3,7 @@ import Button from "react-bootstrap/Button"
 import CantidadIrem from "../../conponentesIndividuales/CantidadIrem"
 import StockDisponible from "../../conponentesIndividuales/StockDisponible"
 
-
-
-const ItemCount = ({ stock = "stok", inicial = "inicial", onAdd = "onAdd" }) => {
+const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => {
 
   const [count, cantidadTotal] = useState(inicial)
   const [stockTotal, stockDisponible] = useState(stock)
@@ -60,7 +58,7 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", onAdd = "onAdd" }) => 
         <Button variant="info" size="lg" active className="w-50" onClick={restarCantidad}  >
           -
         </Button>
-        <Button variant="success" className="w-100" onClick={cantidadComprar}>Comprar</Button>
+        <Button variant="success" className="w-100" onClick={OnAdd}>Agregar al carrito</Button>
 
         <StockDisponible totalStock={stockTotal} />
       </div>
