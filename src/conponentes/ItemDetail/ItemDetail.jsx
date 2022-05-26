@@ -2,14 +2,19 @@ import Spinner from 'react-bootstrap/Spinner'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import ItemCount from "../../contenedores/itemCount/ItemCount"
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../contenedores/Context/CartContext'
 const ItemDetail = ({ producto, Cargando }) => {
 
   const [AgregarCarrito, ColocarAgregarCarrito] = useState(true)
 
-  function OnAdd() {
-    ColocarAgregarCarrito(false)
+const {OnAdd2} = useContext(CartContext)
+
+  const OnAdd = ()=> {
+    ColocarAgregarCarrito(false),
+     OnAdd2({producto})
+
   }
   return (
     <div>

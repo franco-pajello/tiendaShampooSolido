@@ -58,7 +58,7 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
         <Button variant="info" size="lg" active className="w-50" onClick={restarCantidad}  >
           -
         </Button>
-        <Button variant="success" className="w-100" onClick={OnAdd}>Agregar al carrito</Button>
+        <Button variant="success" className="w-100" onClick={()=>OnAdd()}>Agregar al carrito</Button>
 
         <StockDisponible totalStock={stockTotal} />
       </div>
