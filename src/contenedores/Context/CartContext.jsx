@@ -1,24 +1,34 @@
-import { createContext, useState} from "react"
+import { createContext, useState } from "react"
 
 export const CartContext = createContext([])
 
 
-const CartContextProvider = ({children}) => {
-    
-    const [ProductoCarrito, SetProductoCarrito]=useState([])
+const CartContextProvider = ({ children }) => {
+
+  const [ProductoCarrito, SetProductoCarrito] = useState([])
 
 
   function OnAdd2(producto) {
-      SetProductoCarrito([...ProductoCarrito, producto ])
-      
+
+    const SumarCantidadProductos = ProductoCarrito.find(objetoProducto => objetoProducto.id === producto.id)
+
+    if (SumarCantidadProductos) {
+      ProductoCarrito([SumarCantidadProductos.cantidad = producto.cantidad, SumarCantidadProductos.precio = producto.precio * producto.cantidad])
+
+
+    } else {
+
+      SetProductoCarrito([...ProductoCarrito, producto])
+    }
+
   }
-    return (
+  return (
     <CartContext.Provider value={{
-     ProductoCarrito, 
-        OnAdd2
-        }}>
-           {children}
-         
+      ProductoCarrito,
+      OnAdd2
+    }}>
+      {children}
+
     </CartContext.Provider>
   )
 }

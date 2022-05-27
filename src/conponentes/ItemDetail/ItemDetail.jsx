@@ -9,11 +9,11 @@ const ItemDetail = ({ producto, Cargando }) => {
 
   const [AgregarCarrito, ColocarAgregarCarrito] = useState(true)
 
-const {OnAdd2} = useContext(CartContext)
+  const { OnAdd2 } = useContext(CartContext)
 
-  const OnAdd = ()=> {
-    ColocarAgregarCarrito(false),
-     OnAdd2({producto})
+  const OnAdd = (cantidad, bool) => {
+    ColocarAgregarCarrito(bool),
+      OnAdd2({ ...producto, cantidad })
 
   }
   return (
@@ -39,7 +39,7 @@ const {OnAdd2} = useContext(CartContext)
         </Card.Body>
         {AgregarCarrito === true ?
 
-          <ItemCount stock={5} inicial={0} OnAdd={OnAdd} />
+          <ItemCount stock={5} inicial={1} OnAdd={OnAdd} />
           :
           <>
             <Link to="/carrito">

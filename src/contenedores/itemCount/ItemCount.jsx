@@ -5,16 +5,14 @@ import StockDisponible from "../../conponentes/StockDisponible/StockDisponible"
 
 const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => {
 
-  const [count, cantidadTotal] = useState(inicial)
+  const [cantidad, cantidadTotal] = useState(inicial)
   const [stockTotal, stockDisponible] = useState(stock)
 
   function restarCantidad() {
-    if (count > inicial) {
-
-
-      cantidadTotal(count - 1)
+    if (cantidad > inicial) {
+      cantidadTotal(cantidad - 1)
       stockDisponible(stockTotal + 1)
-
+      OnAdd(cantidad, true)
     }
 
 
@@ -23,26 +21,26 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
   function sumarCantidad() {
 
-    if (count < stock) {
-
-      cantidadTotal(count + 1)
+    if (cantidad < stock) {
+      cantidadTotal(cantidad + 1)
       stockDisponible(stockTotal - 1)
+      OnAdd(cantidad, true)
     } else {
       alert("El limite es 5")
     }
 
   }
   function cantidadComprar() {
-    if (count === inicial) {
+    if (cantidad === inicial) {
       alert("Tiene que elegir una cantidad")
 
     }
-    if (count === 1) {
-      alert("Compró " + count + " unidad")
+    if (cantidad === 1) {
+      alert("Compró " + cantidad + " unidad")
 
     }
-    if (count > 1) {
-      alert("Compró " + count + " unidades")
+    if (cantidad > 1) {
+      alert("Compró " + cantidad + " unidades")
     }
   }
   return (
@@ -50,7 +48,7 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
     <div className="w-100 ">
 
-      <CantidadIrem cantidad={count} />
+      <CantidadIrem cantidad={cantidad} />
       <div className="w-100">
         <Button variant="primary" size="lg" active className="w-50" onClick={sumarCantidad} >
           +
@@ -58,7 +56,7 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
         <Button variant="info" size="lg" active className="w-50" onClick={restarCantidad}  >
           -
         </Button>
-        <Button variant="success" className="w-100" onClick={()=>OnAdd()}>Agregar al carrito</Button>
+        <Button variant="success" className="w-100" onClick={() => OnAdd(cantidad, false)}>Agregar al carrito</Button>
 
         <StockDisponible totalStock={stockTotal} />
       </div>
