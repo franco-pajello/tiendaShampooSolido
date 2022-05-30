@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import ItemCount from "../../contenedores/itemCount/ItemCount"
 import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { CartContext } from '../../contenedores/Context/CartContext'
 const ItemDetail = ({ producto, Cargando }) => {
 

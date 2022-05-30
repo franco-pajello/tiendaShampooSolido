@@ -10,39 +10,39 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
   function restarCantidad() {
     if (cantidad > inicial) {
+
       cantidadTotal(cantidad - 1)
       stockDisponible(stockTotal + 1)
-      OnAdd(cantidad, true)
+      OnAdd(-1, true)
     }
 
 
   }
-
-
   function sumarCantidad() {
 
     if (cantidad < stock) {
+
       cantidadTotal(cantidad + 1)
       stockDisponible(stockTotal - 1)
-      OnAdd(cantidad, true)
+      OnAdd(1, true)
     } else {
       alert("El limite es 5")
     }
 
   }
-  function cantidadComprar() {
-    if (cantidad === inicial) {
-      alert("Tiene que elegir una cantidad")
-
-    }
-    if (cantidad === 1) {
-      alert("Compró " + cantidad + " unidad")
-
-    }
-    if (cantidad > 1) {
-      alert("Compró " + cantidad + " unidades")
-    }
-  }
+  /*   function cantidadComprar() {
+      if (cantidad === inicial) {
+        alert("Tiene que elegir una cantidad")
+  
+      }
+      if (cantidad === 1) {
+        alert("Compró " + cantidad + " unidad")
+  
+      }
+      if (cantidad > 1) {
+        alert("Compró " + cantidad + " unidades")
+      }
+    } */
   return (
 
 

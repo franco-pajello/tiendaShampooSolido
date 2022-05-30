@@ -65,7 +65,7 @@ export const ApiProductos = (id) => {
 
       return resolve(tipoDeTarjeta)
 
-    }, 2000);
+    });
 
   })
 }

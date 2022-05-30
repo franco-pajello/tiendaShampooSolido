@@ -12,14 +12,13 @@ const NavBar = () => {
 
 
 
-  return (<>
+  return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link to="/" className="text-decoration-none"><Navbar.Brand>Curie cosmética</Navbar.Brand></Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link> <Link to="/" className="text-decoration-none text-light">Home</Link></Nav.Link>
             <NavDropdown title="Menú" id="collasible-nav-dropdown">
               <Link to="/categoria/shampoo" className="text-decoration-none text-black"><Button variant="light" className="w-100">Shampoo</Button></Link>
               <Link to="/categoria/acondicionador"><Button variant="light" className="w-100">Acondicionador</Button> </Link>
@@ -29,14 +28,14 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2}>
-              <Link to="/carrito" className="text-light" ><IconCart /></Link>
-            </Nav.Link>
+          <Link to="/carrito" className="text-light" >
+             <IconCart />
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  </>
+  
   )
 
 }
