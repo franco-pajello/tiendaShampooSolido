@@ -12,7 +12,7 @@ import { useContext } from "react";
 import { CartContext } from "../../contenedores/Context/CartContext";
 const NavBar = () => {
 
-  const { cantidadTotal } = useContext(CartContext)
+  const { cantidadTotalEnIcono } = useContext(CartContext)
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -31,7 +31,7 @@ const NavBar = () => {
           </Nav>
           <Nav>
             <Link to="/carrito" className="text-light text-decoration-none"  >
-              <IconCart /> {cantidadTotal()}
+              <IconCart /> {cantidadTotalEnIcono() !== 0 && cantidadTotalEnIcono() }
             </Link>
           </Nav>
         </Navbar.Collapse>
