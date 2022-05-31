@@ -21,9 +21,7 @@ const Carrito = () => {
           </>
           :
           <>
-          
-          <Button className="position-absolute end-0  btn-secondary" onClick={()=>eliminarContenidoDelCarrito()}>Vaciar carrito</Button>
-          
+          <>
             {ProductoCarrito.map(prod =>
               <div key={prod.id} className="d-inline-flex align-text-top col-3"><Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={`${prod.img}`} />
@@ -40,8 +38,9 @@ const Carrito = () => {
               </Card>
               </div>)}
 
-            <h4>Precio total: {precioTotalDelCarrito()}</h4>
-
+            <h4>Precio total: {precioTotalDelCarrito()} <Button  onClick={()=>eliminarContenidoDelCarrito()}>Vaciar carrito</Button></h4>
+            
+                </>
           </>
       }
     </>
