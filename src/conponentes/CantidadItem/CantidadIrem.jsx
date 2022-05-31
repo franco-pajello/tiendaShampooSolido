@@ -4,7 +4,7 @@ const CantidadIrem = ({ cantidad = "Cantidad" }) => {
 
   return (
     <>
-      <Card className="w-100">
+      <Card className="w-100 d-inline-flex">
         <Card.Body>{cantidad}</Card.Body>
       </Card>
     </>

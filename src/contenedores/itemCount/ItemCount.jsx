@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "react-bootstrap/Button"
+import { Link } from "react-router-dom"
 import CantidadIrem from "../../conponentes/CantidadItem/CantidadIrem"
 import StockDisponible from "../../conponentes/StockDisponible/StockDisponible"
 
@@ -8,6 +9,10 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
   const [cantidad, cantidadTotal] = useState(inicial)
   const [stockTotal, stockDisponible] = useState(stock)
 
+
+
+
+  
   function restarCantidad() {
     if (cantidad > inicial) {
 
@@ -37,18 +42,21 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
     <div className="w-100 ">
 
-      <CantidadIrem cantidad={cantidad} />
-      <div className="w-100">
-        <Button variant="primary" size="lg" active className="w-50" onClick={sumarCantidad} >
+     
+      <div className="w-100 d-flex">
+        <Button variant="primary" size="lg" active className="w-50 " onClick={sumarCantidad} >
           +
         </Button>
-        <Button variant="info" size="lg" active className="w-50" onClick={restarCantidad}  >
+        <CantidadIrem  cantidad={cantidad} />
+        <Button variant="info" size="lg" active className="w-50 " onClick={restarCantidad}  >
           -
         </Button>
-        <Button variant="success" className="w-100" onClick={cantidad === 0 ? ()=>elijaUnaCantidad() : () => OnAdd(cantidad, false)}>Agregar al carrito</Button>
-
-        <StockDisponible totalStock={stockTotal} />
       </div>
+        <Button variant="success" className="w-100" onClick={cantidad === 0 ? ()=>elijaUnaCantidad() : () => OnAdd(cantidad, false)}>Agregar al carrito</Button>
+        <Link to="/"><Button variant="info" className="w-100">
+              ir a la tienda</Button>
+            </Link>
+        <StockDisponible totalStock={stockTotal} />
 
     </div>
 

@@ -38,8 +38,9 @@ const ItemDetail = ({ producto, Cargando }) => {
           </Card.Text>
         </Card.Body>
         {AgregarCarrito === true ?
-
+           
           <ItemCount stock={5} inicial={0} OnAdd={OnAdd} />
+     
           :
           <>
             <Link to="/carrito">
