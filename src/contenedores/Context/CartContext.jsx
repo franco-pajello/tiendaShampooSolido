@@ -5,63 +5,30 @@ export const CartContext = createContext([])
 
 
 
-
-
-
-
-
-
-
-
-
 const CartContextProvider = ({ children }) => {
 
   const [ProductoCarrito, SetProductoCarrito] = useState([])
   const [CarritoEstaVacio, SetCarritoEstaVacio] = useState(false)
 
   function OnAdd2(producto) {
-    const SumarCantidadProductos = ProductoCarrito.find(objetoProducto => objetoProducto.id === producto.id)
 
+    SetProductoCarrito([...ProductoCarrito, producto])
 
-    if (SumarCantidadProductos) {
-      if (producto.cantidad < 0) {
-
-        SumarCantidadProductos.cantidad--
-
-        SumarCantidadProductos.precio = SumarCantidadProductos.cantidad * producto.precio
-
-
-      } else {
-        SumarCantidadProductos.cantidad++
-
-        SumarCantidadProductos.precio = SumarCantidadProductos.cantidad * producto.precio
-
-      }
-
-      SetCarritoEstaVacio(true)
-
-      SetProductoCarrito([...ProductoCarrito])
-    } else {
-
-      SetProductoCarrito([...ProductoCarrito, producto])
-      SetCarritoEstaVacio(true)
-    }
-
+    SetCarritoEstaVacio(true)
 
   }
 
 
-
-
-
   const eliminarUnidad = (id) => {
     let a = ProductoCarrito.find(prod => prod.id === id)
-
+    console.log(a)
     if (a.cantidad > 1) {
 
       console.log(a.cantidad)
 
       a.cantidad = a.cantidad - 1
+
+
 
       SetProductoCarrito([...ProductoCarrito])
 
@@ -74,12 +41,17 @@ const CartContextProvider = ({ children }) => {
       } else {
 
         SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
+
         SetCarritoEstaVacio(false)
       }
 
 
     }
 
+  }
+  const cantidadTotal = () => {
+
+    return ProductoCarrito.reduce((contador, prod) => contador + prod.cantidad, 0)
   }
 
 
@@ -89,7 +61,8 @@ const CartContextProvider = ({ children }) => {
       ProductoCarrito,
       OnAdd2,
       CarritoEstaVacio,
-      eliminarUnidad
+      eliminarUnidad,
+      cantidadTotal
     }}>
       {children}
 

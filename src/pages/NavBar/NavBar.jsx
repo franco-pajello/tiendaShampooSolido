@@ -8,9 +8,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import IconCart from "../../contenedores/CartWidgetContenedor/CartWidget"
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button";
+import { useContext } from "react";
+import { CartContext } from "../../contenedores/Context/CartContext";
 const NavBar = () => {
 
-
+  const { cantidadTotal } = useContext(CartContext)
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -28,14 +30,16 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-          <Link to="/carrito" className="text-light" >
-             <IconCart />
+            <Link to="/carrito" className="text-light text-decoration-none"  >
+              <IconCart /> {cantidadTotal()}
             </Link>
           </Nav>
         </Navbar.Collapse>
+
       </Container>
+
     </Navbar>
-  
+
   )
 
 }

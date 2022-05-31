@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Button from "react-bootstrap/Button"
 import CantidadIrem from "../../conponentes/CantidadItem/CantidadIrem"
 import StockDisponible from "../../conponentes/StockDisponible/StockDisponible"
@@ -13,7 +13,6 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
       cantidadTotal(cantidad - 1)
       stockDisponible(stockTotal + 1)
-      OnAdd(-1, true)
     }
 
 
@@ -24,25 +23,12 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
       cantidadTotal(cantidad + 1)
       stockDisponible(stockTotal - 1)
-      OnAdd(1, true)
     } else {
       alert("El limite es 5")
     }
 
   }
-  /*   function cantidadComprar() {
-      if (cantidad === inicial) {
-        alert("Tiene que elegir una cantidad")
-  
-      }
-      if (cantidad === 1) {
-        alert("Compró " + cantidad + " unidad")
-  
-      }
-      if (cantidad > 1) {
-        alert("Compró " + cantidad + " unidades")
-      }
-    } */
+
   return (
 
 
