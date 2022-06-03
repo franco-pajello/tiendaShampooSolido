@@ -1,6 +1,4 @@
 import { createContext, useState } from "react"
-
-
 export const CartContext = createContext([])
 
 const CartContextProvider = ({ children }) => {
@@ -16,7 +14,7 @@ const CartContextProvider = ({ children }) => {
 
   }
 
-  const eliminarUnidad = (id) => {
+  const restarUnidad = (id) => {
     let obtenerProducto = ProductoCarrito.find(prod => prod.id === id)
 
     if (obtenerProducto.cantidad > 1) {
@@ -24,21 +22,14 @@ const CartContextProvider = ({ children }) => {
       obtenerProducto.cantidad = obtenerProducto.cantidad - 1
 
       SetProductoCarrito([...ProductoCarrito])
-
-    } else {
-
-      if (ProductoCarrito.length > 1) {
-
-        SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
-
-      } else {
-
-        SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
-
-        SetCarritoEstaVacio(false)
-      }
-
     }
+  }
+
+  const sumarUnidad = (id) => {
+
+    let obtenerProducto = ProductoCarrito.find(prod => prod.id === id)
+    obtenerProducto.cantidad = obtenerProducto.cantidad + 1
+    SetProductoCarrito([...ProductoCarrito])
 
   }
   const cantidadTotalEnIcono = () => {
@@ -55,15 +46,28 @@ const CartContextProvider = ({ children }) => {
     SetProductoCarrito([])
     SetCarritoEstaVacio(false)
   }
+  const eliminarCartaDelCarrito = (id) => {
+    if (ProductoCarrito.length > 1) {
+      SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
+
+    } else {
+      SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
+      SetCarritoEstaVacio(false)
+
+    }
+
+  }
   return (
     <CartContext.Provider value={{
       ProductoCarrito,
       OnAdd2,
       CarritoEstaVacio,
-      eliminarUnidad,
+      restarUnidad,
       cantidadTotalEnIcono,
       precioTotalDelCarrito,
-      eliminarContenidoDelCarrito
+      eliminarContenidoDelCarrito,
+      sumarUnidad,
+      eliminarCartaDelCarrito
     }}>
       {children}
 
