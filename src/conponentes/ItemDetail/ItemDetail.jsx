@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import ItemCount from "../../contenedores/itemCount/ItemCount"
 import { useContext, useState } from 'react'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../contenedores/Context/CartContext'
 const ItemDetail = ({ producto, Cargando }) => {
 
@@ -38,9 +38,9 @@ const ItemDetail = ({ producto, Cargando }) => {
           </Card.Text>
         </Card.Body>
         {AgregarCarrito === true ?
-           
+
           <ItemCount stock={5} inicial={0} OnAdd={OnAdd} />
-     
+
           :
           <>
             <Link to="/carrito">

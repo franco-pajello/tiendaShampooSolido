@@ -18,7 +18,7 @@ const CartContextProvider = ({ children }) => {
 
   const eliminarUnidad = (id) => {
     let obtenerProducto = ProductoCarrito.find(prod => prod.id === id)
-    
+
     if (obtenerProducto.cantidad > 1) {
 
       obtenerProducto.cantidad = obtenerProducto.cantidad - 1
@@ -28,11 +28,11 @@ const CartContextProvider = ({ children }) => {
     } else {
 
       if (ProductoCarrito.length > 1) {
-     
+
         SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
 
       } else {
-       
+
         SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
 
         SetCarritoEstaVacio(false)
@@ -48,12 +48,12 @@ const CartContextProvider = ({ children }) => {
 
   const precioTotalDelCarrito = () => {
 
-    return ProductoCarrito.reduce((acumulador , prod)=> acumulador + (prod.cantidad * prod.precio),0)
+    return ProductoCarrito.reduce((acumulador, prod) => acumulador + (prod.cantidad * prod.precio), 0)
   }
-  
-  const eliminarContenidoDelCarrito = ()=>{
-  SetProductoCarrito([]) 
- SetCarritoEstaVacio(false)
+
+  const eliminarContenidoDelCarrito = () => {
+    SetProductoCarrito([])
+    SetCarritoEstaVacio(false)
   }
   return (
     <CartContext.Provider value={{

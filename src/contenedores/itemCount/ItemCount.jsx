@@ -12,7 +12,7 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
 
 
-  
+
   function restarCantidad() {
     if (cantidad > inicial) {
 
@@ -33,7 +33,7 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
     }
 
   }
-  function elijaUnaCantidad(){
+  function elijaUnaCantidad() {
     alert("Elija una cantidad")
   }
 
@@ -42,21 +42,21 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
     <div className="w-100 ">
 
-     
+
       <div className="w-100 d-flex">
         <Button variant="primary" size="lg" active className="w-50 " onClick={sumarCantidad} >
           +
         </Button>
-        <CantidadIrem  cantidad={cantidad} />
+        <CantidadIrem cantidad={cantidad} />
         <Button variant="info" size="lg" active className="w-50 " onClick={restarCantidad}  >
           -
         </Button>
       </div>
-        <Button variant="success" className="w-100" onClick={cantidad === 0 ? ()=>elijaUnaCantidad() : () => OnAdd(cantidad, false)}>Agregar al carrito</Button>
-        <Link to="/"><Button variant="info" className="w-100">
-              ir a la tienda</Button>
-            </Link>
-        <StockDisponible totalStock={stockTotal} />
+      <Button variant="success" className="w-100" onClick={cantidad === 0 ? () => elijaUnaCantidad() : () => OnAdd(cantidad, false)}>Agregar al carrito</Button>
+      <Link to="/"><Button variant="info" className="w-100">
+        ir a la tienda</Button>
+      </Link>
+      <StockDisponible totalStock={stockTotal} />
 
     </div>
 

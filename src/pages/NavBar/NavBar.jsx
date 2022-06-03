@@ -31,7 +31,7 @@ const NavBar = () => {
           </Nav>
           <Nav>
             <Link to="/carrito" className="text-light text-decoration-none"  >
-              <IconCart /> {cantidadTotalEnIcono() !== 0 && cantidadTotalEnIcono() }
+              <IconCart /> {cantidadTotalEnIcono() !== 0 && cantidadTotalEnIcono()}
             </Link>
           </Nav>
         </Navbar.Collapse>
