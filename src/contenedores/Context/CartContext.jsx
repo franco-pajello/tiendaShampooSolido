@@ -1,4 +1,8 @@
+import { addDoc, collection, getFirestore, orderBy } from "firebase/firestore"
 import { createContext, useState } from "react"
+import Swal from "sweetalert"
+
+
 export const CartContext = createContext([])
 
 const CartContextProvider = ({ children }) => {
@@ -8,10 +12,23 @@ const CartContextProvider = ({ children }) => {
 
   function OnAdd2(producto) {
 
-    SetProductoCarrito([...ProductoCarrito, producto])
+    let obtenerProducto = ProductoCarrito.find(prod => prod.id === producto.id)
 
-    SetCarritoEstaVacio(true)
+    if (obtenerProducto) {
 
+      obtenerProducto.cantidad = obtenerProducto.cantidad + producto.cantidad
+
+      SetProductoCarrito([...ProductoCarrito])
+
+      SetCarritoEstaVacio(true)
+
+    } else {
+
+
+      SetProductoCarrito([...ProductoCarrito, producto])
+
+      SetCarritoEstaVacio(true)
+    }
   }
 
   const restarUnidad = (id) => {
@@ -57,6 +74,41 @@ const CartContextProvider = ({ children }) => {
     }
 
   }
+  const alertaRestarUnidad = () => {
+
+    Swal({
+      toast: true,
+      color: '#716add',
+      position: 'center',
+      icon: 'error',
+      title: 'Se puede comprar a partir de 1 unidad',
+      button: false,
+      timer: 1000
+    })
+
+  }
+  function finalizarCompra() {
+
+    let orden = {}
+    orden.buyer = { nombre: "fulano", correo: "fulano@gmail", telefono: "11652485245" }
+    orden.total = precioTotalDelCarrito()
+    orden.productos = ProductoCarrito.map(producto => {
+      const id = producto.id
+      const nombre = producto.nombre
+      const precio = producto.precio
+      const cantidad = producto.cantidad
+
+      return { id, nombre, precio, cantidad }
+
+    })
+    const baseDeDatos = getFirestore()
+    const consultarColeccion = collection(baseDeDatos, "ordenes")
+    addDoc(consultarColeccion, orden)
+      .then(resp => console.log(resp))
+      .finally(eliminarContenidoDelCarrito())
+
+  }
+
   return (
     <CartContext.Provider value={{
       ProductoCarrito,
@@ -67,7 +119,9 @@ const CartContextProvider = ({ children }) => {
       precioTotalDelCarrito,
       eliminarContenidoDelCarrito,
       sumarUnidad,
-      eliminarCartaDelCarrito
+      eliminarCartaDelCarrito,
+      finalizarCompra,
+      alertaRestarUnidad
     }}>
       {children}
 
