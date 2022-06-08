@@ -21,13 +21,15 @@ function Formulario() {
       if (form.checkValidity() === false) {
         event.preventDefault();
         event.stopPropagation();
+      }else{
+
+      finalizarCompra()
+       setValidated(true); 
       }
-  
-      setValidated(true);
-    };
+    }; 
   
     return (
-      <Form noValidate validated={validated} onSubmit={handleSubmit} className="w-50 mx-auto">
+      <Form  validated={validated} onSubmit={handleSubmit} className="w-50 mx-auto">
         <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="validationCustom01">
             <Form.Label>First name</Form.Label>
@@ -52,12 +54,12 @@ function Formulario() {
         </Row>
         <Row className="mb-3">
         <Form.Group as={Col} md="6" controlId="validationCustomUsername">
-            <Form.Label>Username</Form.Label>
+            <Form.Label>email</Form.Label>
             <InputGroup hasValidation>
-              <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+              <InputGroup.Text id="inputGroupPrepend ">@</InputGroup.Text>
               <Form.Control
                 type="text"
-                placeholder="Username"
+                placeholder="Email"
                 aria-describedby="inputGroupPrepend"
                 required
               />
@@ -99,7 +101,7 @@ function Formulario() {
             feedbackType="invalid"
           />
         </Form.Group> 
-        <Button onClick={()=>finalizarCompra()}>finalizar compra</Button>
+        <Button  type="submit">finalizar compra</Button>
       </Form>
     );
   }
