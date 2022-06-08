@@ -44,11 +44,11 @@ const ItemCount = ({ stock = "stok", inicial = "inicial", OnAdd = "onAdd" }) => 
 
 
       <div className="w-100 d-flex">
-        <Button variant="primary" size="lg" active className="w-50 " onClick={sumarCantidad} >
+        <Button  variant="primary" size="lg" active  onClick={sumarCantidad} >
           +
         </Button>
         <CantidadIrem cantidad={cantidad} />
-        <Button variant="info" size="lg" active className="w-50 " onClick={restarCantidad}  >
+        <Button variant="info" size="lg" active  onClick={restarCantidad}  >
           -
         </Button>
       </div>

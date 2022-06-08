@@ -29,7 +29,7 @@ function Formulario() {
     return (
       <Form noValidate validated={validated} onSubmit={handleSubmit} className="w-50 mx-auto">
         <Row className="mb-3">
-          <Form.Group as={Col} md="4" controlId="validationCustom01">
+          <Form.Group as={Col} md="6" controlId="validationCustom01">
             <Form.Label>First name</Form.Label>
             <Form.Control
               required
@@ -39,7 +39,7 @@ function Formulario() {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustom02">
+          <Form.Group as={Col} md="6" controlId="validationCustom02">
             <Form.Label>Last name</Form.Label>
             <Form.Control
               required
@@ -49,7 +49,9 @@ function Formulario() {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+        </Row>
+        <Row className="mb-3">
+        <Form.Group as={Col} md="6" controlId="validationCustomUsername">
             <Form.Label>Username</Form.Label>
             <InputGroup hasValidation>
               <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
@@ -64,8 +66,6 @@ function Formulario() {
               </Form.Control.Feedback>
             </InputGroup>
           </Form.Group>
-        </Row>
-        <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="validationCustom03">
             <Form.Label>City</Form.Label>
             <Form.Control type="text" placeholder="City" required />
@@ -73,14 +73,17 @@ function Formulario() {
               Please provide a valid city.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustom04">
+        </Row>
+        <Row>
+
+        <Form.Group as={Col} md="6" controlId="validationCustom04">
             <Form.Label>State</Form.Label>
             <Form.Control type="text" placeholder="State" required />
             <Form.Control.Feedback type="invalid">
               Please provide a valid state.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustom05">
+          <Form.Group as={Col} md="6" controlId="validationCustom05">
             <Form.Label>Zip</Form.Label>
             <Form.Control type="text" placeholder="Zip" required />
             <Form.Control.Feedback type="invalid">
@@ -95,7 +98,7 @@ function Formulario() {
             feedback="You must agree before submitting."
             feedbackType="invalid"
           />
-        </Form.Group>
+        </Form.Group> 
         <Button onClick={()=>finalizarCompra()}>finalizar compra</Button>
       </Form>
     );

@@ -16,8 +16,14 @@ const ItemDetail = ({ producto, Cargando }) => {
       OnAdd2({ ...producto, cantidad })
 
   }
+
+
+
+
+
+
   return (
-    <div>
+    <>
       {Cargando ? <>
         <Button variant="dark" disabled>
           <Spinner
@@ -29,7 +35,7 @@ const ItemDetail = ({ producto, Cargando }) => {
           />
           Cargando...
         </Button>
-      </> : <Card style={{ width: '18rem' }}>
+      </> : <Card style={{ width: '18rem' }} className="mx-auto">
         <Card.Img variant="top" src={`${producto.img}`} />
         <Card.Body>
           <Card.Title>{`${producto.nombre}`}</Card.Title>
@@ -39,7 +45,7 @@ const ItemDetail = ({ producto, Cargando }) => {
         </Card.Body>
         {AgregarCarrito === true ?
 
-          <ItemCount stock={5} inicial={0} OnAdd={OnAdd} />
+          <ItemCount stock={5} inicial={1} OnAdd={OnAdd} />
 
           :
           <>
@@ -53,7 +59,7 @@ const ItemDetail = ({ producto, Cargando }) => {
         }
       </Card>}
 
-    </div>
+    </>
   )
 }
 
