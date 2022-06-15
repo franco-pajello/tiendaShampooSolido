@@ -2,7 +2,6 @@ import { addDoc, collection, getFirestore, orderBy } from "firebase/firestore"
 import { createContext, useState } from "react"
 import Swal from "sweetalert"
 
-
 export const CartContext = createContext([])
 
 const CartContextProvider = ({ children }) => {
@@ -87,10 +86,17 @@ const CartContextProvider = ({ children }) => {
     })
 
   }
+
   function finalizarCompra() {
 
+    let datosDelFormularioEmail = document.getElementById("email").value
+    let datosDelFormularioNombre = document.getElementById("nombre").value
+    let datosDelFormularioApellido = document.getElementById("apellido").value
+    let datosDelFormularioTelefono = document.getElementById("telefono").value
+
+
     let orden = {}
-    orden.buyer = { nombre: "fulano", correo: "fulano@gmail", telefono: "11652485245" }
+    orden.buyer = { nombre: datosDelFormularioNombre + " " + datosDelFormularioApellido, correo: datosDelFormularioEmail, telefono: datosDelFormularioTelefono }
     orden.total = precioTotalDelCarrito()
     orden.productos = ProductoCarrito.map(producto => {
       const id = producto.id
@@ -104,9 +110,22 @@ const CartContextProvider = ({ children }) => {
     const baseDeDatos = getFirestore()
     const consultarColeccion = collection(baseDeDatos, "ordenes")
     addDoc(consultarColeccion, orden)
-      .then(resp => console.log(resp))
+      .then(resp => CompraExitosaDatoIdAlert(datosDelFormularioNombre, resp.id))
+      .catch((err) => (() => alert("¡ups! ocurrio un error :("), console.log(err)))
       .finally(eliminarContenidoDelCarrito())
 
+  }
+  function CompraExitosaDatoIdAlert(nombre, id) {
+
+    Swal({
+      toast: true,
+      color: '#716add',
+      position: 'center',
+      icon: 'success',
+      title: `${nombre} su compra está en camino`,
+      text: `el numero de orden es ${id}`,
+      button: true,
+    })
   }
 
   return (
