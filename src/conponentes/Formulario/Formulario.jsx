@@ -63,7 +63,7 @@ function Formulario() {
             />
           </InputGroup>
         </Form.Group>
-        <Form.Group as={Col} md="6" /* controlId="validationCustom03" */>
+        <Form.Group as={Col} md="6">
           <Form.Label>Teléfono</Form.Label>
           <Form.Control type="tel"
             name="telefono"
@@ -73,21 +73,39 @@ function Formulario() {
             required id='telefono' />
         </Form.Group>
       </Row>
-      <Row>
+      <Row className='mb-3 '>
 
         <Form.Group as={Col} md="6">
           <Form.Label>Provincia</Form.Label>
-          <Form.Control type="text" placeholder="ingrese provincia" required />
+          <Form.Control type="text" placeholder="Ingrese provincia" required />
         </Form.Group>
         <Form.Group as={Col} md="6">
           <Form.Label>Partido</Form.Label>
           <Form.Control type="text" placeholder="Ingrese Partido" required />
         </Form.Group>
       </Row>
-      <Form.Group className="mb-3 col-4">
-        <Form.Label>Cod/postal</Form.Label>
-        <Form.Control type="text" placeholder="cod/postal" required />
+      <Row className="mb-3">
+
+      <Form.Group as={Col} md="6">
+        <Form.Label>Localidad</Form.Label>
+        <Form.Control type="text" placeholder="Ingrese localidad" required />
       </Form.Group>
+      <Form.Group as={Col} md="6">
+        <Form.Label>Cod/postal</Form.Label>
+        <Form.Control type="text" placeholder="Cod/postal" required />
+      </Form.Group>
+      </Row>
+      <Row className='mb-3 '>
+
+        <Form.Group as={Col} md="6" >
+          <Form.Label>Calle</Form.Label>
+          <Form.Control type="text" placeholder="Ingrese Calle" required />
+        </Form.Group>
+        <Form.Group as={Col} md="6" >
+          <Form.Label>Altura</Form.Label>
+          <Form.Control type="tel" placeholder="Ingrese altura" required />
+        </Form.Group>
+      </Row>
       <Button type="submit">finalizar compra</Button>
     </Form>
   );
