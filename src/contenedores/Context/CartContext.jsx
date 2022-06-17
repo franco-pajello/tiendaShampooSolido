@@ -122,7 +122,7 @@ const CartContextProvider = ({ children }) => {
       color: '#716add',
       position: 'center',
       icon: 'success',
-      title: `${nombre} su compra está en camino`,
+      title: `${nombre}, estamos preparando tu pedido`,
       text: `el numero de orden es ${id}`,
       button: true,
     })
