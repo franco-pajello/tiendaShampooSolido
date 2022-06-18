@@ -3,8 +3,14 @@ import Card from "react-bootstrap/Card"
 const StockDisponible = ({ totalStock = "No hay stock" }) => {
   return (
     <>
-      <Card className="w-100">
-        <Card.Body className="d-flex">Stock disponible {totalStock}</Card.Body>
+      <Card
+        className="w-100"
+      >
+        <Card.Body
+          className="d-flex"
+        >
+          Stock disponible {totalStock}
+        </Card.Body>
       </Card>
 
     </>

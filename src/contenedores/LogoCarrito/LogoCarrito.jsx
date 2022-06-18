@@ -1,10 +1,10 @@
 
 import { TiShoppingCart } from "react-icons/ti";
 
-const IconCart = () => {
+const IconoCarrito = () => {
   return (
     <TiShoppingCart />
   )
 }
 
-export default IconCart
+export default IconoCarrito

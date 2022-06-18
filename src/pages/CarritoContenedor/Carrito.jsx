@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { CartContext } from "../../contenedores/Context/CartContext"
+import { CarritoContexto } from "../../contenedores/Context/CarritoContexto"
 import Card from "react-bootstrap/Card"
 import { Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
@@ -15,7 +15,7 @@ const Carrito = () => {
     eliminarCartaDelCarrito,
     alertaRestarUnidad,
     cantidadTotalEnIcono
-  } = useContext(CartContext)
+  } = useContext(CarritoContexto)
 
 
 
@@ -24,7 +24,8 @@ const Carrito = () => {
       <div className="d-flex justify-content-around col-12 ">
         <div className="col-6">
           {
-            !CarritoEstaVacio ?
+            !CarritoEstaVacio
+              ?
               <div className=" mx-auto">
                 <h2>El carrito está vacío...</h2>
                 <Link to="/"><Button variant="info" className="w-10">
@@ -66,16 +67,16 @@ const Carrito = () => {
               </>
           }
         </div>
-        
-          {
-            cantidadTotalEnIcono() !== 0 &&
 
-            <div className="col-6 w-40">
-              <Formulario />
-            </div>
-          }
+        {
+          cantidadTotalEnIcono() !== 0 &&
 
-      
+          <div className="col-6 w-40">
+            <Formulario />
+          </div>
+        }
+
+
       </div>
 
       {cantidadTotalEnIcono() !== 0 &&

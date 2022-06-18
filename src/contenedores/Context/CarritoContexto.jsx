@@ -2,14 +2,15 @@ import { addDoc, collection, getFirestore, orderBy } from "firebase/firestore"
 import { createContext, useState } from "react"
 import Swal from "sweetalert"
 
-export const CartContext = createContext([])
+export const CarritoContexto = createContext([])
 
-const CartContextProvider = ({ children }) => {
+const CarritoContextoProveedor = ({ children }) => {
 
-  const [ProductoCarrito, SetProductoCarrito] = useState([])
-  const [CarritoEstaVacio, SetCarritoEstaVacio] = useState(false)
+  const [ProductoCarrito, establecerProductoCarrito] = useState([])
+  const [CarritoEstaVacio, establecerCarritoEstaVacio] = useState(false)
 
   function OnAdd2(producto) {
+
 
     let obtenerProducto = ProductoCarrito.find(prod => prod.id === producto.id)
 
@@ -17,16 +18,16 @@ const CartContextProvider = ({ children }) => {
 
       obtenerProducto.cantidad = obtenerProducto.cantidad + producto.cantidad
 
-      SetProductoCarrito([...ProductoCarrito])
+      establecerProductoCarrito([...ProductoCarrito])
 
-      SetCarritoEstaVacio(true)
+      establecerCarritoEstaVacio(true)
 
     } else {
 
 
-      SetProductoCarrito([...ProductoCarrito, producto])
+      establecerProductoCarrito([...ProductoCarrito, producto])
 
-      SetCarritoEstaVacio(true)
+      establecerCarritoEstaVacio(true)
     }
   }
 
@@ -37,7 +38,7 @@ const CartContextProvider = ({ children }) => {
 
       obtenerProducto.cantidad = obtenerProducto.cantidad - 1
 
-      SetProductoCarrito([...ProductoCarrito])
+      establecerProductoCarrito([...ProductoCarrito])
     }
   }
 
@@ -45,10 +46,11 @@ const CartContextProvider = ({ children }) => {
 
     let obtenerProducto = ProductoCarrito.find(prod => prod.id === id)
     obtenerProducto.cantidad = obtenerProducto.cantidad + 1
-    SetProductoCarrito([...ProductoCarrito])
+    establecerProductoCarrito([...ProductoCarrito])
 
   }
   const cantidadTotalEnIcono = () => {
+
 
     return ProductoCarrito.reduce((acumulador, prod) => acumulador + prod.cantidad, 0)
   }
@@ -59,16 +61,16 @@ const CartContextProvider = ({ children }) => {
   }
 
   const eliminarContenidoDelCarrito = () => {
-    SetProductoCarrito([])
-    SetCarritoEstaVacio(false)
+    establecerProductoCarrito([])
+    establecerCarritoEstaVacio(false)
   }
   const eliminarCartaDelCarrito = (id) => {
     if (ProductoCarrito.length > 1) {
-      SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
+      establecerProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
 
     } else {
-      SetProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
-      SetCarritoEstaVacio(false)
+      establecerProductoCarrito(ProductoCarrito.filter(prod => prod.id !== id))
+      establecerCarritoEstaVacio(false)
 
     }
 
@@ -129,7 +131,7 @@ const CartContextProvider = ({ children }) => {
   }
 
   return (
-    <CartContext.Provider value={{
+    <CarritoContexto.Provider value={{
       ProductoCarrito,
       OnAdd2,
       CarritoEstaVacio,
@@ -144,8 +146,8 @@ const CartContextProvider = ({ children }) => {
     }}>
       {children}
 
-    </CartContext.Provider>
+    </CarritoContexto.Provider>
   )
 }
 
-export default CartContextProvider
+export default CarritoContextoProveedor

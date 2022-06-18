@@ -1,12 +1,12 @@
-import {useContext} from 'react'
+
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './pages/ItenDetailContainer/ItemDetailContainer';
 import Carrito from "./pages/CarritoContenedor/Carrito"
-import NavBar from './pages/NavBar/NavBar';
-import CartContextProvider from './contenedores/Context/CartContext';
+import CarritoContextoProveedor from './contenedores/Context/CarritoContexto';
+import BarraDeNavegacion from './pages/BarraDeNavegacion/BarraDeNavegacion';
+import ListaDeArticuloContenedora from './pages/ListaDeArticuloContenedora/ListaDeArticuloContenedora';
+import ArticuloDetalleContenedor from './pages/ArticuloDetalleContenedor/ArticuloDetalleContenedor';
 
 
 
@@ -16,34 +16,34 @@ function App() {
 
 
   return (
-    <CartContextProvider>
+    <CarritoContextoProveedor>
 
-    <BrowserRouter>
-      <div className="App">
-
-
-        <NavBar/>
+      <BrowserRouter>
+        <div className="App">
 
 
-        <Routes>
-
-          <Route path="/" element={<ItemListContainer/>} />
-
-          <Route path="/categoria/:id" element={<ItemListContainer/>} />
-
-          <Route path="/detalle/:id" element={<ItemDetailContainer/>} />
+          <BarraDeNavegacion />
 
 
-          <Route path="/carrito" element={<Carrito/>} />
+          <Routes>
+
+            <Route path="/" element={<ListaDeArticuloContenedora />} />
+
+            <Route path="/categoria/:id" element={<ListaDeArticuloContenedora />} />
+
+            <Route path="/detalle/:id" element={<ArticuloDetalleContenedor />} />
 
 
-          <Route path="/*" element={<Navigate to="/" replace />} />
+            <Route path="/carrito" element={<Carrito />} />
 
-        </Routes>
 
-      </div>
-    </BrowserRouter>
-    </CartContextProvider>
+            <Route path="/*" element={<Navigate to="/" replace />} />
+
+          </Routes>
+
+        </div>
+      </BrowserRouter>
+    </CarritoContextoProveedor>
   )
 }
 

@@ -4,7 +4,8 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import { Col } from 'react-bootstrap';
-import { CartContext } from '../../contenedores/Context/CartContext';
+
+import { CarritoContexto } from '../../contenedores/Context/CarritoContexto';
 
 function Formulario() {
 
@@ -12,7 +13,7 @@ function Formulario() {
 
     finalizarCompra
 
-  } = useContext(CartContext)
+  } = useContext(CarritoContexto)
 
   const [validated, setValidated] = useState(false);
 
@@ -36,6 +37,7 @@ function Formulario() {
             required
             type="text"
             placeholder="Nombre"
+            pattern='[a-zA-Z]+'
             id='nombre'
           />
         </Form.Group>
@@ -45,15 +47,20 @@ function Formulario() {
             required
             type="text"
             placeholder="Apellido"
+            pattern='[a-zA-Z]+'
             id='apellido'
           />
         </Form.Group>
       </Row>
       <Row className="mb-3">
         <Form.Group as={Col} md="6">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>
+            Email
+          </Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend ">@</InputGroup.Text>
+            <InputGroup.Text id="inputGroupPrepend ">
+              @
+            </InputGroup.Text>
             <Form.Control
               type="email"
               placeholder="Email"
@@ -65,7 +72,9 @@ function Formulario() {
           </InputGroup>
         </Form.Group>
         <Form.Group as={Col} md="6">
-          <Form.Label>Teléfono</Form.Label>
+          <Form.Label>
+            Teléfono
+          </Form.Label>
           <Form.Control type="tel"
             name="telefono"
             pattern='[0-9]{11}'
@@ -75,39 +84,83 @@ function Formulario() {
         </Form.Group>
       </Row>
       <Row className='mb-3 '>
-
         <Form.Group as={Col} md="6">
-          <Form.Label>Provincia</Form.Label>
-          <Form.Control type="text" placeholder="Ingrese provincia" required />
+          <Form.Label>
+            Provincia
+          </Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ingrese provincia"
+            pattern='[a-zA-Z\s]+'
+            required
+          />
         </Form.Group>
         <Form.Group as={Col} md="6">
-          <Form.Label>Partido</Form.Label>
-          <Form.Control type="text" placeholder="Ingrese Partido" required />
+          <Form.Label>
+            Partido
+          </Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ingrese Partido"
+            pattern='[a-zA-Z\s]+'
+            required
+          />
         </Form.Group>
       </Row>
       <Row className="mb-3">
-
-      <Form.Group as={Col} md="6">
-        <Form.Label>Localidad</Form.Label>
-        <Form.Control type="text" placeholder="Ingrese localidad" required />
-      </Form.Group>
-      <Form.Group as={Col} md="6">
-        <Form.Label>Cod/postal</Form.Label>
-        <Form.Control type="tel" placeholder="Cod/postal" required />
-      </Form.Group>
+        <Form.Group as={Col} md="6">
+          <Form.Label>
+            Localidad
+          </Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ingrese localidad"
+            pattern='[a-zA-Z\s]+'
+            required
+          />
+        </Form.Group>
+        <Form.Group as={Col} md="6">
+          <Form.Label>
+            Cod/postal
+          </Form.Label>
+          <Form.Control
+            type="tel"
+            placeholder="Cod/postal"
+            pattern='[0-9]+'
+            required
+          />
+        </Form.Group>
       </Row>
       <Row className='mb-3 '>
 
         <Form.Group as={Col} md="6" >
-          <Form.Label>Calle</Form.Label>
-          <Form.Control type="text" placeholder="Ingrese Calle"  pattern='[a-Z]{11}' required />
+          <Form.Label>
+            Calle
+          </Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ingrese Calle"
+            pattern='[a-zA-Z\s]+'
+            required
+          />
         </Form.Group>
         <Form.Group as={Col} md="6" >
-          <Form.Label>Altura</Form.Label>
-          <Form.Control type="tel" placeholder="Ingrese altura"  required />
+          <Form.Label>
+            Altura
+          </Form.Label>
+          <Form.Control
+            type="tel"
+            placeholder="Ingrese altura"
+            pattern='[0-9]+'
+            required
+          />
         </Form.Group>
       </Row>
-      <Button type="submit">finalizar compra</Button>
+      <Button
+        type="submit"
+      >
+        finalizar compra
+      </Button>
     </Form>
   );
 }

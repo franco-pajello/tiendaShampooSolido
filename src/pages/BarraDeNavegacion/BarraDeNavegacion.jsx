@@ -5,14 +5,16 @@ import Navbar from "react-bootstrap/Navbar"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-import IconCart from "../../contenedores/CartWidgetContenedor/CartWidget"
+
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button";
 import { useContext } from "react";
-import { CartContext } from "../../contenedores/Context/CartContext";
-const NavBar = () => {
+import { CarritoContexto } from "../../contenedores/Context/CarritoContexto";
+import IconoCarrito from "../../contenedores/LogoCarrito/LogoCarrito"
 
-  const { cantidadTotalEnIcono } = useContext(CartContext)
+const BarraDeNavegacion = () => {
+
+  const { cantidadTotalEnIcono } = useContext(CarritoContexto)
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -31,7 +33,8 @@ const NavBar = () => {
           </Nav>
           <Nav>
             <Link to="/carrito" className="text-light text-decoration-none"  >
-              <IconCart /> {cantidadTotalEnIcono() !== 0 && cantidadTotalEnIcono()}
+              <IconoCarrito
+              /> {cantidadTotalEnIcono() !== 0 && cantidadTotalEnIcono()}
             </Link>
           </Nav>
         </Navbar.Collapse>
@@ -43,4 +46,4 @@ const NavBar = () => {
   )
 
 }
-export default NavBar
+export default BarraDeNavegacion
