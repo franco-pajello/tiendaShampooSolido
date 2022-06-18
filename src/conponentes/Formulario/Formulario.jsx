@@ -57,6 +57,7 @@ function Formulario() {
             <Form.Control
               type="email"
               placeholder="Email"
+              autoComplete='off'
               aria-describedby="inputGroupPrepend"
               required
               id='email'
@@ -67,8 +68,8 @@ function Formulario() {
           <Form.Label>Teléfono</Form.Label>
           <Form.Control type="tel"
             name="telefono"
-            pattern='[0-9]{10}'
-            placeholder="EJ: 1125269438"
+            pattern='[0-9]{11}'
+            placeholder="EJ: 01125269438"
             autoComplete='off'
             required id='telefono' />
         </Form.Group>
@@ -92,18 +93,18 @@ function Formulario() {
       </Form.Group>
       <Form.Group as={Col} md="6">
         <Form.Label>Cod/postal</Form.Label>
-        <Form.Control type="text" placeholder="Cod/postal" required />
+        <Form.Control type="tel" placeholder="Cod/postal" required />
       </Form.Group>
       </Row>
       <Row className='mb-3 '>
 
         <Form.Group as={Col} md="6" >
           <Form.Label>Calle</Form.Label>
-          <Form.Control type="text" placeholder="Ingrese Calle" required />
+          <Form.Control type="text" placeholder="Ingrese Calle"  pattern='[a-Z]{11}' required />
         </Form.Group>
         <Form.Group as={Col} md="6" >
           <Form.Label>Altura</Form.Label>
-          <Form.Control type="tel" placeholder="Ingrese altura" required />
+          <Form.Control type="tel" placeholder="Ingrese altura"  required />
         </Form.Group>
       </Row>
       <Button type="submit">finalizar compra</Button>
