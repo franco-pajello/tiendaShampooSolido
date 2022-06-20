@@ -30,7 +30,7 @@ const ArticuloLista = ({ productos, Cargando }) => {
           productos.map((prod) =>
             <div
               key={prod.id}
-              className="d-inline-flex align-text-top col-3"
+              className="d-inline-flex align-text-top col-xl-3 col-lg-4 col-md-4 col-sm-6"
             >
               <Articulo
                 articulos={prod}

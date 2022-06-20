@@ -3,8 +3,9 @@ import { Link } from "react-router-dom"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 
-import { CarritoContexto } from "../../contenedores/Context/CarritoContexto"
+
 import Formulario from "../../conponentes/Formulario/Formulario"
+import { CarritoContexto } from "../../contenedores/Context/CarritoContexto"
 
 const Carrito = () => {
   const {
@@ -46,7 +47,7 @@ const Carrito = () => {
               <>
                 {
                   ProductoCarrito.map(prod =>
-                    <div key={prod.id} className="d-inline-flex align-text-top col-4">
+                    <div key={prod.id} className="d-inline-flex align-text-top col-xl-4 col-lg-6 col-md-6" >
 
                       <Card style={{ width: '18rem' }}>
 
@@ -121,7 +122,7 @@ const Carrito = () => {
 
           &&
 
-          <div className="col-6 w-40">
+          <div className="w-40 ">
             <Formulario />
           </div>
         }

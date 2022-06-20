@@ -6,8 +6,9 @@ import NavDropdown from "react-bootstrap/NavDropdown"
 import Navbar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/Button";
 
-import { CarritoContexto } from "../../contenedores/Context/CarritoContexto";
+
 import IconoCarrito from "../../contenedores/LogoCarrito/LogoCarrito"
+import { CarritoContexto } from "../../contenedores/Context/CarritoContexto";
 
 
 

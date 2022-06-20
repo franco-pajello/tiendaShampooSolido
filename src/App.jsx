@@ -6,7 +6,7 @@ import Carrito from "./pages/CarritoContenedor/Carrito"
 import BarraDeNavegacion from './pages/BarraDeNavegacion/BarraDeNavegacion';
 import ListaDeArticuloContenedora from './pages/ListaDeArticuloContenedora/ListaDeArticuloContenedora';
 import ArticuloDetalleContenedor from './pages/ArticuloDetalleContenedor/ArticuloDetalleContenedor';
-import CarritoContextoProveedor from './contenedores/Context/CarritoContexto';
+import CarritoContextoProveedor from "./contenedores/Context/CarritoContexto"
 
 
 
