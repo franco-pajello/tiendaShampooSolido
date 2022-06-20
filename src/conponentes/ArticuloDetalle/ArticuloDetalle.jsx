@@ -57,7 +57,7 @@ const ArticuloDetalle = ({ producto, Cargando }) => {
             <Card.Title>
               {`${producto.nombre}`}
             </Card.Title>
-            <Card.Text>
+            <Card.Text className='fst-italic'>
               {`${producto.detalle}`}
             </Card.Text>
           </Card.Body>

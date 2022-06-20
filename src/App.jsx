@@ -1,7 +1,7 @@
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import Carrito from "./pages/CarritoContenedor/Carrito"
 import CarritoContextoProveedor from './contenedores/Context/CarritoContexto';
 import BarraDeNavegacion from './pages/BarraDeNavegacion/BarraDeNavegacion';
