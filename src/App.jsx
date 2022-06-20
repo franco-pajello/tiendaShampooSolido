@@ -1,12 +1,12 @@
-
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 import Carrito from "./pages/CarritoContenedor/Carrito"
-import CarritoContextoProveedor from './contenedores/Context/CarritoContexto';
 import BarraDeNavegacion from './pages/BarraDeNavegacion/BarraDeNavegacion';
 import ListaDeArticuloContenedora from './pages/ListaDeArticuloContenedora/ListaDeArticuloContenedora';
 import ArticuloDetalleContenedor from './pages/ArticuloDetalleContenedor/ArticuloDetalleContenedor';
+import CarritoContextoProveedor from './contenedores/Context/CarritoContexto';
 
 
 
