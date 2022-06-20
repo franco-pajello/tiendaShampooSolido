@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore, orderBy } from "firebase/firestore"
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { createContext, useState } from "react"
 import Swal from "sweetalert"
 
@@ -9,7 +9,7 @@ const CarritoContextoProveedor = ({ children }) => {
   const [ProductoCarrito, establecerProductoCarrito] = useState([])
   const [CarritoEstaVacio, establecerCarritoEstaVacio] = useState(false)
 
-  function OnAdd2(producto) {
+  function AgregarCantidadEnCarrito(producto) {
 
 
     let obtenerProducto = ProductoCarrito.find(prod => prod.id === producto.id)
@@ -133,8 +133,8 @@ const CarritoContextoProveedor = ({ children }) => {
   return (
     <CarritoContexto.Provider value={{
       ProductoCarrito,
-      OnAdd2,
       CarritoEstaVacio,
+      AgregarCantidadEnCarrito,
       restarUnidad,
       cantidadTotalEnIcono,
       precioTotalDelCarrito,

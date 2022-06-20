@@ -3,9 +3,10 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
-import { Col } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
 
 import { CarritoContexto } from '../../contenedores/Context/CarritoContexto';
+
 
 function Formulario() {
 
@@ -14,6 +15,8 @@ function Formulario() {
     finalizarCompra
 
   } = useContext(CarritoContexto)
+
+  /* formulario de bootstrap */
 
   const [validated, setValidated] = useState(false);
 
@@ -29,10 +32,16 @@ function Formulario() {
     }
   };
   return (
-    <Form validated={validated} onSubmit={handleSubmit} className="w-50 mx-auto">
+    <Form
+      validated={validated}
+      onSubmit={handleSubmit}
+      className="w-50 mx-auto"
+    >
       <Row className="mb-3">
         <Form.Group as={Col} md="6">
-          <Form.Label>Nombre</Form.Label>
+          <Form.Label>
+            Nombre
+          </Form.Label>
           <Form.Control
             required
             type="text"
@@ -42,7 +51,9 @@ function Formulario() {
           />
         </Form.Group>
         <Form.Group as={Col} md="6">
-          <Form.Label>Apellido</Form.Label>
+          <Form.Label>
+            Apellido
+          </Form.Label>
           <Form.Control
             required
             type="text"
@@ -156,10 +167,10 @@ function Formulario() {
           />
         </Form.Group>
       </Row>
-      <Button
-        type="submit"
-      >
+      <Button type="submit">
+
         finalizar compra
+
       </Button>
     </Form>
   );

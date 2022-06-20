@@ -1,4 +1,3 @@
-
 import { TiShoppingCart } from "react-icons/ti";
 
 const IconoCarrito = () => {

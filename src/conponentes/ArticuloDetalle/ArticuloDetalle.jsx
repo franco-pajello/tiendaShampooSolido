@@ -1,25 +1,25 @@
 
 import { useContext, useState } from 'react'
-
 import { Link } from 'react-router-dom'
-
 import Spinner from 'react-bootstrap/Spinner'
 import Button from "react-bootstrap/Button"
 import Card from 'react-bootstrap/Card'
-import RecuentoDeElementos from '../../contenedores/RecuentoDeElementos/RecuentoDeElementos'
 
+import RecuentoDeElementos from '../../contenedores/RecuentoDeElementos/RecuentoDeElementos'
 import { CarritoContexto } from '../../contenedores/Context/CarritoContexto'
+
+
 
 const ArticuloDetalle = ({ producto, Cargando }) => {
 
   const [AgregarCarrito, ColocarAgregarCarrito] = useState(true)
 
-  const { OnAdd2 } = useContext(CarritoContexto)
+  const { AgregarCantidadEnCarrito } = useContext(CarritoContexto)
 
-  const AgregarEnDetalle = (cantidad, bool) => {
+  const AgregarCantidadEnDetalle = (cantidad, bool) => {
 
     ColocarAgregarCarrito(bool),
-      OnAdd2({ ...producto, cantidad })
+      AgregarCantidadEnCarrito({ ...producto, cantidad })
 
   }
 
@@ -31,7 +31,9 @@ const ArticuloDetalle = ({ producto, Cargando }) => {
   return (
     <>
       {Cargando ? <>
-        <Button variant="dark" disabled>
+        <Button
+          variant="dark"
+          disabled>
           <Spinner
             as="span"
             animation="grow"
@@ -66,30 +68,31 @@ const ArticuloDetalle = ({ producto, Cargando }) => {
             <RecuentoDeElementos
               stock={5}
               inicial={1}
-              AgregarEnDetalle={AgregarEnDetalle}
+              AgregarCantidadEnDetalle={AgregarCantidadEnDetalle}
             />
 
             :
             <>
-              <Link
-                to="/carrito"
-              >
+              <Link to="/carrito">
+
                 <Button
                   variant="success"
                   className="w-100"
                 >
                   Ir al carrito
                 </Button>
+
               </Link>
-              <Link
-                to="/"
-              >
+
+              <Link to="/">
+
                 <Button
                   variant="info"
                   className="w-100"
                 >
                   Seguir comprando
                 </Button>
+
               </Link>
             </>
           }

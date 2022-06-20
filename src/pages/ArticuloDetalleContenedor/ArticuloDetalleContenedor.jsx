@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+
 import ArticuloDetalle from "../../conponentes/ArticuloDetalle/ArticuloDetalle"
 
 const ArticuloDetalleContenedor = () => {
