@@ -89,33 +89,58 @@ const CarritoContextoProveedor = ({ children }) => {
 
   }
 
-  function finalizarCompra() {
+  function finalizarCompra(e) {
 
+
+
+    let datosDelFormularioEmail1 = document.getElementById("email1").value
     let datosDelFormularioEmail = document.getElementById("email").value
     let datosDelFormularioNombre = document.getElementById("nombre").value
     let datosDelFormularioApellido = document.getElementById("apellido").value
-    let datosDelFormularioTelefono = document.getElementById("telefono").value
+    let datosDelFormularioCelular = document.getElementById("celular").value
 
+    let validacionDeEmail = datosDelFormularioEmail === datosDelFormularioEmail1
 
     let orden = {}
-    orden.buyer = { nombre: datosDelFormularioNombre + " " + datosDelFormularioApellido, correo: datosDelFormularioEmail, telefono: datosDelFormularioTelefono }
-    orden.total = precioTotalDelCarrito()
-    orden.productos = ProductoCarrito.map(producto => {
-      const id = producto.id
-      const nombre = producto.nombre
-      const precio = producto.precio
-      const cantidad = producto.cantidad
 
-      return { id, nombre, precio, cantidad }
+    if (validacionDeEmail) {
 
-    })
-    const baseDeDatos = getFirestore()
-    const consultarColeccion = collection(baseDeDatos, "ordenes")
-    addDoc(consultarColeccion, orden)
-      .then(resp => CompraExitosaDatoIdAlert(datosDelFormularioNombre, resp.id))
-      .catch((err) => (() => alert("¡ups! ocurrio un error :("), console.log(err)))
-      .finally(eliminarContenidoDelCarrito())
+      orden.buyer =
+      {
+        nombre: datosDelFormularioNombre + " " + datosDelFormularioApellido,
+        correo: datosDelFormularioEmail,
+        telefono: datosDelFormularioCelular
+      }
+      orden.total = precioTotalDelCarrito()
+      orden.productos = ProductoCarrito.map(producto => {
+        const id = producto.id
+        const nombre = producto.nombre
+        const precio = producto.precio
+        const cantidad = producto.cantidad
 
+        return { id, nombre, precio, cantidad }
+
+      })
+      const baseDeDatos = getFirestore()
+      const consultarColeccion = collection(baseDeDatos, "ordenes")
+      addDoc(consultarColeccion, orden)
+        .then(resp => CompraExitosaDatoIdAlert(datosDelFormularioNombre, resp.id))
+        .catch((err) => (() => alert("¡ups! ocurrio un error :("), console.log(err)))
+        .finally(eliminarContenidoDelCarrito())
+
+    } else {
+      Swal({
+        toast: true,
+        color: '#716add',
+        position: 'center',
+        icon: 'error',
+        title: 'Los Email no coinciden',
+        button: false,
+        timer: 1000
+      })
+      e.preventDefault();
+
+    }
   }
   function CompraExitosaDatoIdAlert(nombre, id) {
 

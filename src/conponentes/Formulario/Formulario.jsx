@@ -20,8 +20,6 @@ function Formulario() {
 
   /* formulario de bootstrap */
 
-  const [validated, setValidated] = useState(false);
-
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -29,17 +27,17 @@ function Formulario() {
       event.stopPropagation();
     } else {
 
-      finalizarCompra()
-      setValidated(true);
+      finalizarCompra(event)
+
     }
   };
   return (
     <Form
-      validated={validated}
       onSubmit={handleSubmit}
       className="w-50 mx-auto"
     >
       <Row className="mb-3">
+
         <Form.Group as={Col} md="6">
           <Form.Label>
             Nombre
@@ -64,8 +62,11 @@ function Formulario() {
             id='apellido'
           />
         </Form.Group>
+
       </Row>
+
       <Row className="mb-3">
+
         <Form.Group as={Col} md="6">
           <Form.Label>
             Email
@@ -86,17 +87,54 @@ function Formulario() {
         </Form.Group>
         <Form.Group as={Col} md="6">
           <Form.Label>
-            Teléfono
+            Repertir email
+          </Form.Label>
+          <InputGroup hasValidation>
+            <InputGroup.Text id="inputGroupPrepend ">
+              @
+            </InputGroup.Text>
+            <Form.Control
+              type="email"
+              placeholder="Repita email"
+              autoComplete='off'
+              aria-describedby="inputGroupPrepend"
+              required
+              id='email1'
+            />
+          </InputGroup>
+        </Form.Group>
+
+      </Row>
+
+      <Row className="mb-3" >
+
+        <Form.Group as={Col} md="6">
+          <Form.Label>
+            Celular
           </Form.Label>
           <Form.Control type="tel"
             name="telefono"
             pattern='[0-9]{11}'
             placeholder="EJ: 01125269438"
             autoComplete='off'
+            required id='celular' />
+        </Form.Group>
+        <Form.Group as={Col} md="6">
+          <Form.Label>
+            Teléfono
+          </Form.Label>
+          <Form.Control type="tel"
+            name="telefono"
+            pattern='[0-9]{4}-[0-9]{4}'
+            placeholder="EJ: 4444-4444"
+            autoComplete='off'
             required id='telefono' />
         </Form.Group>
+
       </Row>
+
       <Row className='mb-3 '>
+
         <Form.Group as={Col} md="6">
           <Form.Label>
             Provincia
@@ -119,8 +157,11 @@ function Formulario() {
             required
           />
         </Form.Group>
+
       </Row>
+
       <Row className="mb-3">
+
         <Form.Group as={Col} md="6">
           <Form.Label>
             Localidad
@@ -143,7 +184,9 @@ function Formulario() {
             required
           />
         </Form.Group>
+
       </Row>
+
       <Row className='mb-3 '>
 
         <Form.Group as={Col} md="6" >
@@ -168,13 +211,16 @@ function Formulario() {
             required
           />
         </Form.Group>
+
       </Row>
+
       <Button type="submit">
 
         finalizar compra
 
       </Button>
-    </Form>
+
+    </Form >
   );
 }
 export default Formulario
