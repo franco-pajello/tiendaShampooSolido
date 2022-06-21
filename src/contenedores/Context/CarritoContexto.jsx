@@ -118,7 +118,12 @@ const CarritoContextoProveedor = ({ children }) => {
         const precio = producto.precio
         const cantidad = producto.cantidad
 
-        return { id, nombre, precio, cantidad }
+        return {
+          id,
+          nombre,
+          precio,
+          cantidad
+        }
 
       })
       const baseDeDatos = getFirestore()
@@ -134,7 +139,7 @@ const CarritoContextoProveedor = ({ children }) => {
         color: '#716add',
         position: 'center',
         icon: 'error',
-        title: 'Los Email no coinciden',
+        title: 'Los email no coinciden',
         button: false,
         timer: 1000
       })
