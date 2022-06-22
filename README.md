@@ -1,10 +1,13 @@
 # Curie cosmética spa-ecommerce
 
-(https://astounding-chebakia-d55732.netlify.app)
-
 Curie cosmética es una spa (Solicitud de una sola página) en donde podemos observar e interactuar con una ecommerce (comercio electrónico) de cosmética natural
 
+## URL 
+
+- https://astounding-chebakia-d55732.netlify.app
+
 ## Características 
+
 ### Home
 - Logo en barra de navegación con direccion a home
 - Barra de navegacion con categorias y logo de  carrito de compras con direccion a carrito
@@ -43,7 +46,7 @@ Curie cosmética es una spa (Solicitud de una sola página) en donde podemos obs
 
 ## tecnologia
 
-Tecnoligia utilizada para el desarrollo del ecommerce:
+##### Tecnoligia utilizada para el desarrollo del ecommerce:
 
 - [Visual studio code] - editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web.
 - [ ReactJS ] - biblioteca Javascript de código abierto
@@ -66,6 +69,6 @@ Para obtener el resultado final de la spa/ecommerce utilizamos complementos exte
 
 ## Desarrollador
 
-Franco Pajello
-Github: https://github.com/franco-pajello
-Linkedin: https://www.linkedin.com/in/franco-pajello-411a341b6
+- Franco Pajello
+- Github: https://github.com/franco-pajello
+- Linkedin: https://www.linkedin.com/in/franco-pajello-411a341b6
