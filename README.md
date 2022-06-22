@@ -18,7 +18,7 @@ Curie cosmética es una spa (Solicitud de una sola página) en donde podemos obs
 - Producto individual con descripción del mismo
 - Botones para sumar y restar cantidad
 - Botones para agregar al carrito e ir a la tienda (home)
-##### Detalle del producto -producto agregado al carrito-
+#### Detalle del producto -producto agregado al carrito-
 - Logo en barra de navegación con direccion a home
 - Barra de navegacion con categorias y logo de  carrito de compras con direccion a carrito
 - Producto con detalle del mismo
@@ -44,9 +44,9 @@ Curie cosmética es una spa (Solicitud de una sola página) en donde podemos obs
 - servidor firebase
 - página web en netefly
 
-## tecnologia
+## tecnología
 
-##### Tecnoligia utilizada para el desarrollo del ecommerce:
+#### Tecnoligía utilizada para el desarrollo del ecommerce:
 
 - [Visual studio code] - editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web.
 - [ ReactJS ] - biblioteca Javascript de código abierto
