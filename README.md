@@ -46,7 +46,7 @@ Curie cosmética es una spa (Solicitud de una sola página) en donde podemos obs
 
 ## tecnología
 
-#### Tecnoligía utilizada para el desarrollo del ecommerce:
+#### Tecnología utilizada para el desarrollo del ecommerce:
 
 - [Visual studio code] - editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web.
 - [ ReactJS ] - biblioteca Javascript de código abierto
@@ -54,7 +54,7 @@ Curie cosmética es una spa (Solicitud de una sola página) en donde podemos obs
 
 ## Complementos
 
-Para obtener el resultado final de la spa/ecommerce utilizamos complementos externos al visual studio code, recat js y javaScript.
+Para obtener el resultado final de la spa/ecommerce utilizamos complementos externos al visual studio code, react js y javaScript.
 
 | complemento | documentacion y version |
 | ------ | ------ |
