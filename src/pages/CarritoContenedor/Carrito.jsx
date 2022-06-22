@@ -24,9 +24,9 @@ const Carrito = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-around col-12 ">
+      <div className="d-block justify-content-around col-12 ">
 
-        <div className="col-6">
+        <div className="col-12 ">
           {
             !CarritoEstaVacio
               ?
@@ -47,7 +47,7 @@ const Carrito = () => {
               <>
                 {
                   ProductoCarrito.map(prod =>
-                    <div key={prod.id} className="d-inline-flex align-text-top col-xl-4 col-lg-6 col-md-6" >
+                    <div key={prod.id} className="d-inline-flex align-text-top " >
 
                       <Card style={{ width: '18rem' }}>
 
@@ -105,7 +105,7 @@ const Carrito = () => {
 
                         <>
                           <Button onClick={() => eliminarCartaDelCarrito(prod.id)}>
-                            eliminar
+                            Eliminar
                           </Button>
                         </>
                       </Card>
@@ -117,30 +117,24 @@ const Carrito = () => {
           }
         </div>
 
-        {
-          cantidadTotalEnIcono() !== 0
+        <>
+          {cantidadTotalEnIcono() !== 0
+            &&
+            <>
+              <h4>
+                Precio total: {precioTotalDelCarrito()}
+              </h4>
+              <Button onClick={() => eliminarContenidoDelCarrito()}>
+                Vaciar carrito
+              </Button>
 
-          &&
+              <Formulario />
 
-          <div className="w-40 ">
-            <Formulario />
-          </div>
-        }
+            </>
+          }
+        </>
 
       </div>
-
-      {cantidadTotalEnIcono() !== 0
-        &&
-        <>
-          <h4>
-            Precio total: {precioTotalDelCarrito()}
-          </h4>
-          <Button onClick={() => eliminarContenidoDelCarrito()}>
-            Vaciar carrito
-          </Button>
-
-        </>
-      }
     </>
 
   )
