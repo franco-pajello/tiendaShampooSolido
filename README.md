@@ -4,7 +4,7 @@ Curie cosmética es una spa (Solicitud de una sola página) en donde podemos obs
 
 ## URL 
 
-- https://astounding-chebakia-d55732.netlify.app
+- curie-cosmetica.netlify.app
 
 ## Características 
 
