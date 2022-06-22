@@ -4,7 +4,37 @@
 
 Curie cosmética es una spa (Solicitud de una sola página) en donde podemos observar e interactuar con una ecommerce (comercio electrónico) de cosmética natural
 
-## Características
+## Características 
+### Home
+- Logo en barra de navegación con direccion a home
+- Barra de navegacion con categorias y logo de  carrito de compras con direccion a carrito
+- Botón en los productos de home con dirección al detalle del mismo
+ ### Detalle del producto 
+- Logo en barra de navegación con direccion a home
+- Barra de navegacion con categorias y logo de  carrito de compras con direccion a carrito
+- Producto individual con descripción del mismo
+- Botones para sumar y restar cantidad
+- Botones para agregar al carrito e ir a la tienda (home)
+##### Detalle del producto -producto agregado al carrito-
+- Logo en barra de navegación con direccion a home
+- Barra de navegacion con categorias y logo de  carrito de compras con direccion a carrito
+- Producto con detalle del mismo
+- Botón para ir al carrito
+- Botón para seguir comprardo
+### Carrito vacío
+- Logo en barra de navegación con direccion a home
+- Barra de navegacion con categorias y logo de  carrito de compras con direccion a carrito
+- Botón para volver a la tienda (home)
+### Carrito con productos
+- Logo en barra de navegación con direccion a home
+- Barra de navegacion con categorias y logo de  carrito de compras con direccion a carrito
+- Producto sin detalle del mismo
+- Botones para sumar y restar cantidad
+- Botón para eliminar producto
+- Botón para vaciar carrito
+- Formulario para completar y finalizar compra
+
+## Características del desarrollo
 
 - desarrollada en Visual studio code
 - desarrollada con react js
@@ -17,23 +47,7 @@ Tecnoligia utilizada para el desarrollo del ecommerce:
 
 - [Visual studio code] - editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web.
 - [ ReactJS ] - biblioteca Javascript de código abierto
-- [JavaScript] - lenguaje de programación interpretado, dialecto del estándar ECMAScript.
-
-## Instalación de clon de repositorio
-
-
-URL del repositorio de repositorio original:      https://github.com/franco-pajello/tiendaShampooSolido-react.git 
-Abre la Git Bash.
-
-Cambia el directorio de trabajo actual a la ubicación en donde quieres clonar el directorio.
-
-Escribe git clone, y luego pega la URL que copiaste antes.
-
-$ git clone https:https: //github.com/franco-pajello/tiendaShampooSolido-react.git
-
-Presiona Enter para crear tu clon local.
-
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+- [JavaScrip] - lenguaje de programación interpretado, dialecto del estándar ECMAScript.
 
 ## Complementos
 
