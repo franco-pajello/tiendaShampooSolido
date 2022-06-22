@@ -4,7 +4,7 @@ Curie cosmética es una spa (Solicitud de una sola página) en donde podemos obs
 
 ## URL 
 
-- curie-cosmetica.netlify.app
+- https://curie-cosmetica.netlify.app/
 
 ## Características 
 
