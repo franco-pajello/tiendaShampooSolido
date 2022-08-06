@@ -1,0 +1,20 @@
+@import "../conponentes/Articulo/articuloStyle";
+@import "../conponentes/ArticuloDetalle/articuloDetalle.scss";
+@import "../conponentes/ArticuloLista/ArticuloLista.scss";
+@import "../pages/BarraDeNavegacion/barraDeNvegacion";
+@import "./mediaQuery";
+
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+.body{
+	background-color:#fdddd9;
+}

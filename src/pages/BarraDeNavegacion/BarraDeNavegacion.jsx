@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useContext } from "react";
+import { FiAlignJustify } from "react-icons/fi";
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import NavDropdown from "react-bootstrap/NavDropdown"
@@ -17,7 +18,70 @@ const BarraDeNavegacion = () => {
   const { cantidadTotalEnIcono } = useContext(CarritoContexto)
 
   return (
-    <Navbar
+
+
+    <div className="BaraaDeNavegacion">
+
+      <div className="logo">
+        <Link to="/">
+
+          <h3>Curie cosmética</h3>
+
+        </Link>
+      </div>
+
+      <div>
+          <div  className="menuHamburguesa">
+            
+            <button>
+
+            <FiAlignJustify />
+            
+            </button>
+          </div>
+        <ul className="Lista">
+
+          <li>
+            <Link to="/categoria/shampoo">
+
+              <button className="btnLista">
+                Shampoo
+              </button>
+
+            </Link>
+          </li>
+          <li>
+            <Link to="/categoria/acondicionador">
+
+              <button className="btnLista">acondicionador</button>
+
+            </Link>
+          </li>
+          <li>
+            <Link to="/categoria/otro">
+              <button className="btnLista">otro</button>
+            </Link>
+          </li>
+          <li>
+            <div className="iconoCarrito">
+
+              <Link to="/carrito">
+                <IconoCarrito />
+                {cantidadTotalEnIcono() !== 0
+                  &&
+                  cantidadTotalEnIcono()}
+              </Link>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+    </div>
+
+    /*    <Navbar
       collapseOnSelect
       expand="lg"
       bg="dark"
@@ -94,7 +158,7 @@ const BarraDeNavegacion = () => {
 
       </Container>
 
-    </Navbar>
+    </Navbar> */
 
   )
 

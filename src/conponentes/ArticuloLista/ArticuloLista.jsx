@@ -12,20 +12,23 @@ const ArticuloLista = ({ productos, Cargando }) => {
     >
       {
         Cargando
-          ?
+        ?
+        <div className="CargandoArticulo">
+
           <Button
             variant="dark"
             disabled
-          >
+            >
             <Spinner
               as="span"
               animation="grow"
               size="sm"
               role="status"
               aria-hidden="true"
-            />
+              />
             Cargando...
           </Button>
+              </div>
           :
           productos.map((prod) =>
             <div

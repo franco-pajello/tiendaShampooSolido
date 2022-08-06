@@ -31,7 +31,7 @@ const ArticuloDetalle = ({ producto, Cargando }) => {
 
   return (
     <>
-      {Cargando ? <>
+      {Cargando ? <div className='CargandoArticulo' >
         <Button
           variant="dark"
           disabled>
@@ -44,9 +44,9 @@ const ArticuloDetalle = ({ producto, Cargando }) => {
           />
           Cargando...
         </Button>
-      </>
+      </div>
         :
-        <Card
+    /*     <Card
           style={{ width: '18rem' }}
           className="mx-auto"
         >
@@ -61,17 +61,23 @@ const ArticuloDetalle = ({ producto, Cargando }) => {
             <Card.Text className='fst-italic'>
               {`${producto.detalle}`}
             </Card.Text>
-          </Card.Body>
+          </Card.Body> */
+          <div className='cartProductos'>
+            
+            <div>
+              
+            </div>
+            
           {AgregarCarrito === true
 
             ?
-
+            
             <RecuentoDeElementos
-              stock={5}
-              inicial={1}
-              AgregarCantidadEnDetalle={AgregarCantidadEnDetalle}
+            stock={5}
+            inicial={1}
+            AgregarCantidadEnDetalle={AgregarCantidadEnDetalle}
             />
-
+            
             :
             <>
               <Link to="/carrito">
@@ -79,7 +85,7 @@ const ArticuloDetalle = ({ producto, Cargando }) => {
                 <Button
                   variant="success"
                   className="w-100"
-                >
+                  >
                   Ir al carrito
                 </Button>
 
@@ -90,15 +96,14 @@ const ArticuloDetalle = ({ producto, Cargando }) => {
                 <Button
                   variant="info"
                   className="w-100"
-                >
+                  >
                   Seguir comprando
                 </Button>
 
               </Link>
             </>
           }
-        </Card>}
-
+        </div>}
     </>
   )
 }

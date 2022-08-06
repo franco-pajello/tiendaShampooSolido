@@ -1,0 +1,25 @@
+@media(max-width: 780px) {
+
+        .Lista{
+           
+
+            li{
+                display: none;
+            }
+          
+            
+        }
+}
+@media(max-width: 779px) {
+
+    .BaraaDeNavegacion{
+        align-items: center;
+        
+        .menuHamburguesa{
+            display:block; 
+            background: none;
+            background-color: transparent;
+            font-size: 50px;
+        }
+    }
+}
